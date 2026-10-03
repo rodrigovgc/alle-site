@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alle — Flashcards from your own Google Sheets</title>
+<meta name="description" content="Alle turns a Google Sheet, or an AI prompt, into a beautiful flashcard app. Spaced repetition, typing and multiple-choice, images, clocks and read-aloud. Free and mobile-first.">
+<link rel="canonical" href="https://alle.app/">
+<meta name="theme-color" content="#F6F4EC">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Alle — Flashcards from your own Google Sheets">
+<meta property="og:description" content="Turn a Google Sheet, or an AI prompt, into a beautiful spaced-repetition flashcard app. Free and mobile-first.">
+<meta property="og:url" content="https://alle.app/">
+<meta property="og:image" content="https://alle.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Alle — Flashcards from your own Google Sheets">
+<meta name="twitter:description" content="Turn a Google Sheet, or an AI prompt, into a beautiful spaced-repetition flashcard app.">
+<meta name="twitter:image" content="https://alle.app/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Alle","applicationCategory":"EducationalApplication","operatingSystem":"Web, iOS, Android","description":"Alle turns a Google Sheet or an AI prompt into a spaced-repetition flashcard app, with typing and multiple-choice answers, images, clocks and read-aloud.","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"featureList":["Import flashcards from a Google Sheet","Create decks with an AI prompt","Spaced repetition (Leitner)","Typing and multiple-choice answers","Images, flags, road signs and clocks","Read-aloud with Web Speech","Light and dark mode"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Alle free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Alle is free to use. You bring your own Google Sheet or AI chat; there's nothing to pay."}},{"@type":"Question","name":"How do I create a deck?","acceptedAnswer":{"@type":"Answer","text":"Publish a Google Sheet as CSV with two columns, or use the built-in AI prompt builder and paste the result back. You can also start from a ready-made deck."}},{"@type":"Question","name":"Do I need to install anything?","acceptedAnswer":{"@type":"Answer","text":"No. Alle runs in the browser. On iPhone you can add it to your home screen for a full-screen, app-like experience."}},{"@type":"Question","name":"Can I use images?","acceptedAnswer":{"@type":"Answer","text":"Yes. A card can show an image, so you can study flags, road signs or any picture, and Alle can draw analog clocks for telling the time."}}]}
+</script>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap nav__inner">
+    <a class="brand" href="/" aria-label="Alle"><svg viewBox="0 0 95 43" xmlns="http://www.w3.org/2000/svg"><path d="M0 11.2421C0 10.4709 0.471837 9.77825 1.18949 9.49592L6.8189 7.28121C8.05003 6.79686 9.38235 7.70443 9.38235 9.02741V33.8871C9.38235 35.2101 8.05003 36.1177 6.8189 35.6333L1.18949 33.4186C0.471836 33.1363 0 32.4436 0 31.6724V11.2421Z" fill="currentColor"/><path d="M12.6667 11.2421C12.6667 10.4709 13.1386 9.77825 13.8562 9.49592L19.4856 7.28121C20.7168 6.79686 22.0491 7.70443 22.0491 9.02741V33.8871C22.0491 35.2101 20.7168 36.1177 19.4856 35.6333L13.8562 33.4186C13.1386 33.1363 12.6667 32.4436 12.6667 31.6724V11.2421Z" fill="currentColor"/><path d="M30.8056 33L40.6445 8.50829H44.053L53.8918 33H48.9372L42.4014 15.2198L35.7602 33H30.8056ZM37.2712 28.2211L38.6767 24.145H46.0559L47.5317 28.2211H37.2712ZM60.5596 33.3514C59.3649 33.3514 58.381 32.9883 57.608 32.2621C56.8349 31.5359 56.4484 30.388 56.4484 28.8185V8.50829H60.7705V27.9752C60.7705 28.4671 60.8876 28.8185 61.1218 29.0293C61.3561 29.2167 61.6606 29.3104 62.0355 29.3104C62.2229 29.3104 62.422 29.2987 62.6328 29.2753C62.8436 29.2284 63.0662 29.1699 63.3004 29.0996V32.8243C62.8085 33.0117 62.3166 33.1406 61.8246 33.2108C61.3561 33.3045 60.9344 33.3514 60.5596 33.3514ZM70.7529 33.3514C69.5581 33.3514 68.5742 32.9883 67.8012 32.2621C67.0281 31.5359 66.6416 30.388 66.6416 28.8185V8.50829H70.9637V27.9752C70.9637 28.4671 71.0808 28.8185 71.3151 29.0293C71.5493 29.2167 71.8539 29.3104 72.2287 29.3104C72.4161 29.3104 72.6152 29.2987 72.826 29.2753C73.0369 29.2284 73.2594 29.1699 73.4937 29.0996V32.8243C73.0017 33.0117 72.5098 33.1406 72.0178 33.2108C71.5493 33.3045 71.1277 33.3514 70.7529 33.3514ZM84.6356 33.3514C83.1364 33.3514 81.848 33.1054 80.7704 32.6135C79.6928 32.1215 78.8026 31.4656 78.0998 30.6457C77.4205 29.8024 76.9168 28.8536 76.5889 27.7995C76.2609 26.7219 76.0969 25.5974 76.0969 24.4261C76.0969 23.3017 76.2609 22.2007 76.5889 21.1231C76.9168 20.0455 77.4088 19.0733 78.0647 18.2066C78.7206 17.3398 79.564 16.6488 80.5947 16.1334C81.6489 15.5946 82.9021 15.3252 84.3545 15.3252C85.7132 15.3252 86.8962 15.5595 87.9036 16.028C88.9109 16.4731 89.7425 17.1056 90.3984 17.9255C91.0543 18.722 91.5463 19.659 91.8742 20.7366C92.2256 21.8142 92.4013 22.962 92.4013 24.1802C92.4013 24.3442 92.3896 24.5784 92.3662 24.8829C92.3662 25.1641 92.3427 25.4686 92.2959 25.7966H80.4541C80.5713 27.0381 81.0281 27.9752 81.8245 28.6077C82.6445 29.2402 83.6635 29.5564 84.8816 29.5564C85.7718 29.5564 86.6386 29.4041 87.4819 29.0996C88.3252 28.7716 89.0748 28.3148 89.7308 27.7292L91.9094 30.6808C91.0895 31.3133 90.3164 31.8287 89.5902 32.2269C88.864 32.6252 88.1027 32.9063 87.3062 33.0703C86.5331 33.2577 85.643 33.3514 84.6356 33.3514ZM88.0792 23.618C88.1261 23.4305 88.1612 23.2431 88.1847 23.0557C88.2315 22.8683 88.2549 22.6926 88.2549 22.5287C88.2549 22.0367 88.1612 21.5799 87.9738 21.1582C87.7864 20.7131 87.5287 20.3266 87.2008 19.9987C86.8728 19.6707 86.4746 19.4247 86.0061 19.2607C85.561 19.0733 85.0456 18.9796 84.46 18.9796C83.5932 18.9796 82.867 19.1553 82.2814 19.5067C81.6957 19.8581 81.2506 20.3149 80.9461 20.8771C80.665 21.4159 80.4893 21.9781 80.419 22.5638H89.5551L88.0792 23.618Z" fill="currentColor"/></svg></a>
+    <nav class="nav__links">
+      <a class="nav__link" href="#how">How it works</a>
+      <a class="nav__link" href="#features">Features</a>
+      <a class="nav__link" href="#faq">FAQ</a>
+      <a class="btn btn--ghost" href="https://alle-app.vercel.app">Log in</a>
+      <a class="btn btn--primary" href="https://alle-app.vercel.app">Open app</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow reveal">Flashcards, from a spreadsheet you already know</span>
+      <h1 class="reveal">Turn a Google Sheet into a study app</h1>
+      <p class="reveal">Alle makes beautiful flashcards from your own Google Sheet, or from an AI prompt. Spaced repetition remembers what you forget, so you study the right cards at the right time.</p>
+      <div class="hero__cta reveal">
+        <a class="btn btn--primary btn--lg" href="https://alle-app.vercel.app">Start studying free</a>
+        <a class="btn btn--ghost btn--lg" href="#how">See how it works</a>
+      </div>
+      <p class="hero__note reveal">No install. Works on your phone, tablet and computer.</p>
+      <div class="decks">
+        <article class="deck reveal" style="background:#FFF4AB">
+          <span class="deck__meta">English → Dutch</span>
+          <span class="deck__title">Dutch A2 phrases</span>
+          <span class="deck__count">183 cards</span>
+          <svg viewBox="302 169 80 80" xmlns="http://www.w3.org/2000/svg"><path d="M382 209C382 231.091 364.091 249 342 249C319.909 249 302 240.046 302 229C302 217.954 319.909 209 342 209C319.909 209 302 200.046 302 189C302 177.954 319.909 169 342 169C364.091 169 382 186.909 382 209Z" fill="#EFDC8F"/></svg>
+        </article>
+        <article class="deck reveal" style="background:#CBFEBD">
+          <span class="deck__meta">Digit → Portuguese</span>
+          <span class="deck__title">Numbers 1–10</span>
+          <span class="deck__count">10 cards</span>
+          <svg viewBox="20 169 80 80" xmlns="http://www.w3.org/2000/svg"><path d="M20 209C20 231.091 37.9086 249 60 249C82.0914 249 100 231.091 100 209L60 209L20 209Z" fill="#AEECB6"/><path d="M100 169H20C20 191.091 37.9086 209 60 209C82.0914 209 100 191.091 100 169Z" fill="#AEECB6"/></svg>
+        </article>
+        <article class="deck reveal" style="background:#BDDDFE">
+          <span class="deck__meta">Sign → Meaning</span>
+          <span class="deck__title">Road signs</span>
+          <span class="deck__count">36 cards</span>
+          <svg viewBox="443 19 80 80" xmlns="http://www.w3.org/2000/svg"><path d="M443 99C465.091 99 483 81.0914 483 59V79C483 90.0457 491.954 99 503 99C514.046 99 523 90.0457 523 79V39C523 27.9543 514.046 19 503 19C491.954 19 483 27.9543 483 39V59C483 36.9086 465.091 19 443 19L443 99Z" fill="#ADCFF1"/></svg>
+        </article>
+        <article class="deck reveal" style="background:#FEBDDA">
+          <span class="deck__meta">Flag → Country</span>
+          <span class="deck__title">Flags of the world</span>
+          <span class="deck__count">193 cards</span>
+          <svg viewBox="302 19 80 80" xmlns="http://www.w3.org/2000/svg"><path d="M302 19H342L342 59C319.909 59 302 41.0914 302 19Z" fill="#F1ADCA"/><path d="M382 19V59L342 59C342 36.9086 359.909 19 382 19Z" fill="#F1ADCA"/><path d="M342 59L342 99L382 99C382 76.9086 364.091 59 342 59Z" fill="#F1ADCA"/><path d="M302 99V59L342 59C342 81.0914 324.091 99 302 99Z" fill="#F1ADCA"/></svg>
+        </article>
+        <article class="deck reveal" style="background:#CDC9FD">
+          <span class="deck__meta">Clock → Dutch</span>
+          <span class="deck__title">Telling time</span>
+          <span class="deck__count">60 cards</span>
+          <svg viewBox="161 19 80 80" xmlns="http://www.w3.org/2000/svg"><path d="M201 19V59C201 81.0915 183.091 99 161 99V59C161 36.9085 178.909 19 201 19Z" fill="#B5B1FC"/><path d="M241 59V19C218.909 19 201 36.9085 201 59V99C223.091 99 241 81.0915 241 59Z" fill="#B5B1FC"/></svg>
+        </article>
+        <article class="deck reveal" style="background:#FEBDBD">
+          <span class="deck__meta">Term → Definition</span>
+          <span class="deck__title">Cell biology</span>
+          <span class="deck__count">50 cards</span>
+          <svg viewBox="443 169 80 80" xmlns="http://www.w3.org/2000/svg"><path d="M469.667 195.667V169C454.939 169 443 180.939 443 195.667C443 210.394 454.939 222.333 469.667 222.333H443C443 237.061 454.939 249 469.667 249C484.394 249 496.333 237.061 496.333 222.333V249C511.061 249 523 237.061 523 222.333C523 207.606 511.061 195.667 496.333 195.667L523 195.667C523 180.939 511.061 169 496.333 169C481.606 169 469.667 180.939 469.667 195.667Z" fill="#EFA1A1"/></svg>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Three ways to make a deck</h2>
+        <p>Bring your own words, or let AI write them. Either way, you own your cards.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><div class="step__n">1</div><h3>From a Google Sheet</h3><p>Two columns: the front and the back. Publish it as CSV, paste the link, and every row becomes a card.</p></div>
+        <div class="step reveal"><div class="step__n">2</div><h3>With an AI prompt</h3><p>Answer a few questions and Alle writes a prompt for ChatGPT, Claude or Gemini. Paste the reply back and your deck is ready.</p></div>
+        <div class="step reveal"><div class="step__n">3</div><h3>Ready-made decks</h3><p>Start in seconds with built-in decks: numbers, multiplication, world flags and telling the time.</p></div>
+      </div>
+    </div>
+  </section>
+  <section id="features" style="background:var(--surface)">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Made to help it stick</h2>
+        <p>Everything you need to learn, nothing you don't.</p>
+      </div>
+      <div class="features">
+        <div class="feature reveal"><span class="feature__icon" style="background:#FFF4AB"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0C0C0C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/><path d="M12 8v4l3 2"/></svg></span><div><h3>Spaced repetition</h3><p>Alle schedules each card using the Leitner system, so you review just before you'd forget.</p></div></div>
+        <div class="feature reveal"><span class="feature__icon" style="background:#CBFEBD"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0C0C0C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h10"/><path d="M4 18h7"/></svg></span><div><h3>Type or choose</h3><p>Type the answer for recall, or pick from four options, chosen automatically to fit the deck.</p></div></div>
+        <div class="feature reveal"><span class="feature__icon" style="background:#BDDDFE"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0C0C0C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5L5 21"/></svg></span><div><h3>Images and clocks</h3><p>Study flags, road signs and pictures, or read an analog clock, not just words.</p></div></div>
+        <div class="feature reveal"><span class="feature__icon" style="background:#FEBDDA"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0C0C0C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></span><div><h3>Read aloud</h3><p>Hear the answer spoken in the deck's language, so pronunciation sticks too.</p></div></div>
+        <div class="feature reveal"><span class="feature__icon" style="background:#CDC9FD"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0C0C0C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></svg></span><div><h3>Yours, everywhere</h3><p>Your decks and progress follow you across phone, tablet and computer.</p></div></div>
+        <div class="feature reveal"><span class="feature__icon" style="background:#FEBDBD"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0C0C0C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg></span><div><h3>Light and dark</h3><p>An editorial, cinematic look that's easy on the eyes, day or night.</p></div></div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="band reveal">
+        <h2>Start studying in a minute</h2>
+        <p>Pick a ready-made deck, or bring your own Google Sheet. It's free.</p>
+        <a class="btn btn--primary btn--lg" href="https://alle-app.vercel.app">Open Alle</a>
+      </div>
+    </div>
+  </section>
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head reveal"><h2>Questions</h2></div>
+      <div class="faq reveal">
+        <details><summary>Is Alle free?</summary><p>Yes. Alle is free to use. You bring your own Google Sheet or AI chat, so there's nothing to pay.</p></details>
+        <details><summary>How do I create a deck?</summary><p>Publish a Google Sheet as CSV with two columns, or use the built-in AI prompt builder and paste the result back. You can also start from a ready-made deck.</p></details>
+        <details><summary>Do I need to install anything?</summary><p>No. Alle runs in the browser. On iPhone you can add it to your home screen for a full-screen, app-like experience.</p></details>
+        <details><summary>Can I use images?</summary><p>Yes. A card can show an image, so you can study flags, road signs or any picture, and Alle can draw analog clocks for telling the time.</p></details>
+        <details><summary>Where is my data?</summary><p>Your account, decks and progress are stored securely. Your passwords are never visible to anyone, including us.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Alle</span>
+    <span><a href="https://alle-app.vercel.app">Log in</a><a href="https://alle-app.vercel.app">Open app</a><a href="#faq">FAQ</a></span>
+  </div>
+</footer>
+<script>
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach((el, i) => { el.style.transitionDelay = ((i % 6) * 50) + 'ms'; io.observe(el); });
+</script>
+</body>
+</html>
