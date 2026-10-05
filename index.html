@@ -7,6 +7,23 @@
 <meta name="description" content="Alle is a learning platform built on your own material. Bring a list from class, work or curiosity, and Alle turns it into short daily practice that sticks.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<!-- Share preview. Replace YOUR-SITE-URL with your live address, e.g. https://alle-site.vercel.app -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Alle">
+<meta property="og:title" content="Alle: Create your deck and start learning">
+<meta property="og:description" content="Turn the things you need to know into flashcards. From class notes and Google Sheets to road signs, languages and exam prep.">
+<meta property="og:url" content="https://YOUR-SITE-URL/">
+<meta property="og:image" content="https://YOUR-SITE-URL/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Alle: Create your deck and start learning, with colourful flashcard decks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Alle: Create your deck and start learning">
+<meta name="twitter:description" content="Turn the things you need to know into flashcards, and learn a little at a time.">
+<meta name="twitter:image" content="https://YOUR-SITE-URL/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
@@ -892,6 +909,29 @@ footer{border-top:0;margin-top:0;padding:clamp(40px,5vw,64px) 0 32px}
   .f-photo img{object-position:50% 72%}
   .f-title{top:9%}
 }
+
+/* ===== v14 ===== */
+/* example photos: fixed 4:5 box that works in every browser */
+.uc{align-self:start}
+.uc .ph{aspect-ratio:auto;height:0;padding-bottom:125%}
+picture{display:contents}
+/* attachments */
+.drop{display:flex;align-items:center;gap:14px;padding:18px;border-radius:16px;border:1.5px dashed #CFCABD;background:var(--white);cursor:pointer;transition:border-color .2s,background .2s}
+.drop:hover,.drop:focus-visible{border-color:var(--ink);outline:none}
+.drop.over{border-color:var(--ink);background:#FBFAF6}
+.drop svg{width:28px;height:28px;flex:none;color:var(--label)}
+.drop b{display:block;font-size:15px;font-weight:600}
+.drop span span{display:block;font-size:14px;color:var(--label);margin-top:2px}
+.files{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:8px}
+.files:empty{display:none}
+.files li{display:flex;align-items:center;gap:12px;padding:8px 8px 8px 8px;border-radius:14px;background:var(--white);border:1px solid var(--line-2)}
+.files img,.files .fi{width:44px;height:44px;border-radius:10px;object-fit:cover;flex:none}
+.files .fi{display:grid;place-items:center;background:var(--beige);font-size:11px;font-weight:700;color:var(--label)}
+.files .fn{flex:1;min-width:0}
+.files .fn b{display:block;font-size:14px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.files .fn small{font-size:12.5px;color:var(--muted)}
+.files .rm{width:34px;height:34px;border-radius:50%;border:0;background:var(--beige);color:var(--ink);display:grid;place-items:center;cursor:pointer;flex:none}
+.files .rm svg{width:12px;height:12px}
 </style>
 </head>
 <body>
@@ -900,7 +940,7 @@ footer{border-top:0;margin-top:0;padding:clamp(40px,5vw,64px) 0 32px}
   <div class="wrap">
     <a class="logo" href="#top" aria-label="Alle home" data-logo></a>
     <nav class="nav-links" aria-label="Main"><a href="#features">Features</a><a href="#examples">Deck library</a><a href="#ai">Create with AI</a><a href="#faq">FAQ</a></nav>
-    <div class="nav-right"><a class="login js-app" href="#">Log in</a><a class="pill sm js-app" href="#">Get started</a></div>
+    <div class="nav-right"><a class="login js-login" href="#">Log in</a><a class="pill sm js-signup" href="#">Get started</a></div>
   </div>
 </header>
 
@@ -914,7 +954,7 @@ footer{border-top:0;margin-top:0;padding:clamp(40px,5vw,64px) 0 32px}
     <p class="sub t-in" style="animation-delay:.18s">Turn the things you need to know into flashcards</p>
     <p class="lead t-in" style="animation-delay:.26s">From class notes and Google Sheets to road signs, languages and exam prep. Learn a little at a time, at your own pace.</p>
     <div class="hero-ctas t-in" style="animation-delay:.36s">
-      <a class="pill js-app" href="#">Start learning free <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="pill js-signup" href="#">Start learning free <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a class="pill line" href="#examples">Explore the library</a>
     </div>
   </div>
@@ -927,7 +967,7 @@ footer{border-top:0;margin-top:0;padding:clamp(40px,5vw,64px) 0 32px}
   <svg class="bgshape slow-rev" viewBox="0 0 100 100" style="width:min(34vw,460px);height:min(34vw,460px);right:-10%;bottom:-8%"><path data-shape="dpill" fill="#E1DEFC"/></svg>
   </div></div>
   <div class="wrap learn">
-    <figure class="ph rv" style="margin:0"><img src="images/traffic_signs.jpg" alt="A young woman at a sunny table studying road signs on her phone" loading="lazy" width="1100" height="733" style="object-position:40% 50%"></figure>
+    <figure class="ph rv" style="margin:0"><picture><source srcset="images/traffic_signs.avif" type="image/avif"><img src="images/traffic_signs.jpg" alt="A young woman at a sunny table studying road signs on her phone" loading="lazy" width="1100" height="733" style="object-position:40% 50%"></picture></figure>
     <div class="rv d1">
       <h3>Learn what you need to learn</h3>
       <div class="points">
@@ -943,7 +983,7 @@ footer{border-top:0;margin-top:0;padding:clamp(40px,5vw,64px) 0 32px}
 <section style="padding:clamp(96px,11vw,140px) 0 0">
   <div class="wider">
     <div class="ph scene scene2 rv">
-      <img src="images/commuting.jpg" alt="A young man smiling at his phone on a tram, with the city outside the window" loading="lazy" width="1672" height="941" style="object-position:50% 45%">
+      <picture><source srcset="images/commuting.avif" type="image/avif"><img src="images/commuting.jpg" alt="A young man smiling at his phone on a tram, with the city outside the window" loading="lazy" width="1672" height="941" style="object-position:50% 45%"></picture>
       <div class="txt"><h2>A quick session goes a long way.</h2><p>Five minutes on the train. Ten minutes between classes. Come back whenever you're ready.</p></div>
       <div class="glass" id="glass" aria-hidden="true"><small>Session done</small><b>9 of 10 right</b><div class="track"><span data-w="90%"></span></div><div class="row"><span>Portuguese</span><span>4 min</span></div></div>
     </div>
@@ -957,12 +997,12 @@ footer{border-top:0;margin-top:0;padding:clamp(40px,5vw,64px) 0 32px}
   </div>
   <div class="wider">
     <div class="gal2">
-      <figure class="ph big rv" style="margin:0"><img src="images/car-quiz.jpg" alt="A phone in a car showing an Alle road sign question with four answers" loading="lazy" width="1536" height="1024" style="object-position:50% 50%">
+      <figure class="ph big rv" style="margin:0"><picture><source srcset="images/car-quiz.avif" type="image/avif"><img src="images/car-quiz.jpg" alt="A phone in a car showing an Alle road sign question with four answers" loading="lazy" width="1536" height="1024" style="object-position:50% 50%"></picture>
         <figcaption class="cap2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 17h2v-5l-2.5-5.5A2 2 0 0 0 16.7 5H7.3a2 2 0 0 0-1.8 1.5L3 12v5h2"/><circle cx="7.5" cy="17" r="2"/><circle cx="16.5" cy="17" r="2"/><path d="M9.5 17h5M3 12h18"/></svg>Driving test</figcaption></figure>
       <div class="col">
-        <figure class="ph rv d1" style="margin:0"><img src="images/train_station.jpg" alt="A hand holding a phone on a train platform, answering a clock card in Alle" loading="lazy" width="1536" height="1024" style="object-position:50% 40%">
+        <figure class="ph rv d1" style="margin:0"><picture><source srcset="images/train_station.avif" type="image/avif"><img src="images/train_station.jpg" alt="A hand holding a phone on a train platform, answering a clock card in Alle" loading="lazy" width="1536" height="1024" style="object-position:50% 40%"></picture>
           <figcaption class="cap2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Telling time in Dutch</figcaption></figure>
-        <figure class="ph rv d2" style="margin:0"><img src="images/flag-quiz.jpg" alt="A phone at an airport gate showing an Alle flag question" loading="lazy" width="1536" height="1024" style="object-position:50% 40%">
+        <figure class="ph rv d2" style="margin:0"><picture><source srcset="images/flag-quiz.avif" type="image/avif"><img src="images/flag-quiz.jpg" alt="A phone at an airport gate showing an Alle flag question" loading="lazy" width="1536" height="1024" style="object-position:50% 40%"></picture>
           <figcaption class="cap2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>Flags of the world</figcaption></figure>
       </div>
     </div>
@@ -1059,6 +1099,14 @@ footer{border-top:0;margin-top:0;padding:clamp(40px,5vw,64px) 0 32px}
         <div class="f"><span class="l" id="l-topic">What's it about?</span>
           <div class="seg on-white" id="c-topic" role="group" aria-labelledby="l-topic" style="display:grid;width:100%"><button type="button" aria-pressed="true">Feedback</button><button type="button" aria-pressed="false">Bug</button><button type="button" aria-pressed="false">Idea</button><button type="button" aria-pressed="false">Other</button></div></div>
         <div class="f"><label for="c-msg">Message</label><textarea class="field-in" id="c-msg" name="message" placeholder="What worked, what didn't, what you'd love to see"></textarea></div>
+        <div class="f"><span class="l" id="l-files">Screenshots or files <span class="opt-hint">optional, up to 5 files, 10 MB each</span></span>
+          <div class="drop" id="c-drop" tabindex="0" role="button" aria-labelledby="l-files" aria-describedby="c-drop-hint">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-4.5-4.5L7 20"/></svg>
+            <span><b>Drop images or files here</b><span id="c-drop-hint">or <u>browse</u> your device. You can also paste a screenshot.</span></span>
+            <input type="file" id="c-files" multiple accept="image/*,.pdf,.txt,.csv,.doc,.docx" hidden>
+          </div>
+          <ul class="files" id="c-list" aria-live="polite"></ul>
+        </div>
         <p class="form-msg" id="c-err" role="status"></p>
         <button class="pill" type="submit" id="c-send" style="justify-self:center;min-width:200px">Send message</button>
       </form>
@@ -1069,15 +1117,15 @@ footer{border-top:0;margin-top:0;padding:clamp(40px,5vw,64px) 0 32px}
 <section class="final3" aria-labelledby="final-h">
   <div class="wider">
     <div class="f-wrap rv"><div class="f-photo">
-      <img class="f-bg" src="images/group-car.jpg" alt="Three friends in the back seat of a car laughing at a phone together" loading="lazy" width="1672" height="941">
+      <picture><source srcset="images/group-car.avif" type="image/avif"><img class="f-bg" src="images/group-car.jpg" alt="Three friends in the back seat of a car laughing at a phone together" loading="lazy" width="1672" height="941"></picture>
       <div class="f-dim" aria-hidden="true"></div>
       <h2 id="final-h" class="f-title">Allez. Start with<br class="br-d"> one deck.</h2>
-      <img class="f-fg" src="images/group-people.webp" alt="" aria-hidden="true" loading="lazy" width="1672" height="941">
+      <picture><source srcset="images/group-people.avif" type="image/avif"><img class="f-fg" src="images/group-people.webp" alt="" aria-hidden="true" loading="lazy" width="1672" height="941"></picture>
       <div class="f-shade" aria-hidden="true"></div>
     </div>
       <div class="f-copy">
         <p>Create your own, bring your study material,<br class="br-d"> or choose one that's ready to learn.</p>
-        <div class="ctas"><a class="pill white js-app" href="#">Start learning free <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="pill glass" href="#examples">Explore the library</a></div>
+        <div class="ctas"><a class="pill white js-signup" href="#">Start learning free <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="pill glass" href="#examples">Explore the library</a></div>
       </div>
     </div>
   </div>
@@ -1097,7 +1145,7 @@ footer{border-top:0;margin-top:0;padding:clamp(40px,5vw,64px) 0 32px}
       <nav class="foot-cols" aria-label="Footer">
         <div><h4>Product</h4><a href="#features">Features</a><a href="#features">How it works</a><a href="#faq">FAQ</a></div>
         <div><h4>Alle</h4><a href="#contact">Contact</a><a href="#" data-todo="privacy">Privacy</a><a href="#" data-todo="terms">Terms</a></div>
-        <div><h4>Account</h4><a class="js-app" href="#">Login</a><a class="js-app" href="#">Get started</a></div>
+        <div><h4>Account</h4><a class="js-login" href="#">Login</a><a class="js-signup" href="#">Get started</a></div>
       </nav>
     </div>
     <div class="legal"><span>© 2026 Alle</span></div>
@@ -1108,6 +1156,9 @@ footer{border-top:0;margin-top:0;padding:clamp(40px,5vw,64px) 0 32px}
 /* ================= SETTINGS: edit these ================= */
 const CONFIG = {
   APP_URL: "https://alle-app.vercel.app",
+  // Where "Log in" and "Get started" go. The app reads ?auth= to open the right screen.
+  LOGIN_URL:  "https://alle-app.vercel.app/?auth=login",
+  SIGNUP_URL: "https://alle-app.vercel.app/?auth=signup",
   SUPABASE_URL: "https://owlxepsgbcsftpreedao.supabase.co",
   SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im93bHhlcHNnYmNzZnRwcmVlZGFvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA3NTM5OTYsImV4cCI6MjEwNjMyOTk5Nn0.H4JVFMk-8dx6rgFTdVTTtau2XrmE_BBQjxZmWCTlnTQ"
 };
@@ -1133,6 +1184,8 @@ const FAQ = [
 /* ======================================================== */
 
 document.querySelectorAll(".js-app").forEach(a=>a.href=CONFIG.APP_URL);
+document.querySelectorAll(".js-login").forEach(a=>a.href=CONFIG.LOGIN_URL||CONFIG.APP_URL);
+document.querySelectorAll(".js-signup").forEach(a=>a.href=CONFIG.SIGNUP_URL||CONFIG.APP_URL);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -1321,26 +1374,70 @@ document.getElementById("mq1").innerHTML=mq(MQ1);document.getElementById("mq2").
 const PLUS=`<i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i>`;
 document.getElementById("faq-list").innerHTML=FAQ.map(([qq,a])=>`<details><summary>${esc(qq)}${PLUS}</summary><p>${esc(a)}</p></details>`).join("");
 
-/* ---------- contact form ---------- */
+/* ---------- contact form (with attachments) ---------- */
 (function(){
   let topic="Feedback";
   const seg=document.getElementById("c-topic");
   seg.onclick=e=>{const b=e.target.closest("button");if(!b)return;topic=b.textContent;seg.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));};
   const form=document.getElementById("cform"),err=document.getElementById("c-err"),send=document.getElementById("c-send");
+  const drop=document.getElementById("c-drop"),input=document.getElementById("c-files"),list=document.getElementById("c-list");
+  const BUCKET="feedback-attachments",MAX_FILES=5,MAX_MB=10;
+  const OK_EXT=/\.(png|jpe?g|gif|webp|heic|heif|avif|pdf|txt|csv|docx?)$/i;
+  const TYPES={pdf:"application/pdf",txt:"text/plain",csv:"text/csv",doc:"application/msword",docx:"application/vnd.openxmlformats-officedocument.wordprocessingml.document",heic:"image/heic",heif:"image/heif"};
+  let files=[];
+  const kb=n=>n<1048576?`${Math.max(1,Math.round(n/1024))} KB`:`${(n/1048576).toFixed(1)} MB`;
+  function add(list_){
+    err.textContent="";
+    for(const f of list_){
+      if(files.length>=MAX_FILES){err.textContent=`You can attach up to ${MAX_FILES} files.`;break;}
+      if(!(f.type.startsWith("image/")||OK_EXT.test(f.name))){err.textContent=`${f.name} isn't a supported file. Use images, PDF, text or Word files.`;continue;}
+      if(f.size>MAX_MB*1048576){err.textContent=`${f.name} is larger than ${MAX_MB} MB.`;continue;}
+      files.push({file:f,url:f.type.startsWith("image/")?URL.createObjectURL(f):null});
+    }
+    draw();
+  }
+  function draw(){
+    list.innerHTML=files.map((x,i)=>`<li>${x.url?`<img src="${x.url}" alt="">`:`<span class="fi">${esc((x.file.name.split(".").pop()||"file").slice(0,4).toUpperCase())}</span>`}<span class="fn"><b>${esc(x.file.name)}</b><small>${kb(x.file.size)}</small></span><button type="button" class="rm" data-i="${i}" aria-label="Remove ${esc(x.file.name)}">${X}</button></li>`).join("");
+  }
+  list.addEventListener("click",e=>{const b=e.target.closest(".rm");if(!b)return;const [x]=files.splice(+b.dataset.i,1);if(x&&x.url)URL.revokeObjectURL(x.url);draw();});
+  drop.addEventListener("click",()=>input.click());
+  drop.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();input.click();}});
+  input.addEventListener("change",()=>{add(input.files);input.value="";});
+  ["dragenter","dragover"].forEach(t=>drop.addEventListener(t,e=>{e.preventDefault();drop.classList.add("over");}));
+  ["dragleave","dragend","drop"].forEach(t=>drop.addEventListener(t,e=>{e.preventDefault();drop.classList.remove("over");}));
+  drop.addEventListener("drop",e=>{if(e.dataTransfer&&e.dataTransfer.files.length)add(e.dataTransfer.files);});
+  form.addEventListener("paste",e=>{const fs=[...(e.clipboardData?.files||[])];if(fs.length){e.preventDefault();add(fs.map((f,i)=>f.name&&f.name!=="image.png"?f:new File([f],`screenshot-${Date.now()}-${i}.${(f.type.split("/")[1]||"png")}`,{type:f.type})));}});
+
+  const safe=n=>n.normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^\w.\-]+/g,"-").replace(/-+/g,"-").slice(-80);
+  async function upload(f,folder){
+    const path=`${folder}/${(crypto.randomUUID?crypto.randomUUID():Date.now()+"-"+Math.random().toString(36).slice(2))}-${safe(f.name)}`;
+    const ext=(f.name.split(".").pop()||"").toLowerCase();
+    const res=await fetch(`${CONFIG.SUPABASE_URL}/storage/v1/object/${BUCKET}/${path}`,{method:"POST",
+      headers:{apikey:CONFIG.SUPABASE_ANON_KEY,Authorization:`Bearer ${CONFIG.SUPABASE_ANON_KEY}`,"Content-Type":f.type||TYPES[ext]||"application/octet-stream","x-upsert":"false"},body:f});
+    if(!res.ok)throw new Error("upload "+res.status+" "+await res.text());
+    return path;
+  }
+
   form.addEventListener("submit",async e=>{
     e.preventDefault();err.textContent="";
     const data=Object.fromEntries(new FormData(form));data.topic=topic;
-    if(!data.message.trim()){err.textContent="Write a message before sending.";document.getElementById("c-msg").focus();return;}
+    if(!String(data.message||"").trim()){err.textContent="Write a message before sending.";document.getElementById("c-msg").focus();return;}
     if(data.email&&!/^\S+@\S+\.\S+$/.test(data.email)){err.textContent="That email address looks incomplete. Check it, or leave the field empty.";return;}
     send.disabled=true;send.textContent="Sending…";
     try{
+      let paths=[];
       if(CONFIG.SUPABASE_URL&&CONFIG.SUPABASE_ANON_KEY){
-        const res=await fetch(`${CONFIG.SUPABASE_URL}/rest/v1/feedback`,{method:"POST",headers:{apikey:CONFIG.SUPABASE_ANON_KEY,Authorization:`Bearer ${CONFIG.SUPABASE_ANON_KEY}`,"Content-Type":"application/json",Prefer:"return=minimal"},
-          body:JSON.stringify({name:data.name||null,email:data.email||null,topic:data.topic,message:data.message.trim(),page:location.href})});
-        if(!res.ok)throw new Error(res.status);
-      }else console.info("Feedback (not saved, Supabase not set up):",data);
+        const folder=new Date().toISOString().slice(0,10);
+        for(let i=0;i<files.length;i++){send.textContent=`Uploading ${i+1} of ${files.length}…`;paths.push(await upload(files[i].file,folder));}
+        send.textContent="Sending…";
+        const row={name:data.name||null,email:data.email||null,topic:data.topic,message:data.message.trim(),page:location.href};
+        if(paths.length)row.attachments=paths;
+        const res=await fetch(`${CONFIG.SUPABASE_URL}/rest/v1/feedback`,{method:"POST",headers:{apikey:CONFIG.SUPABASE_ANON_KEY,Authorization:`Bearer ${CONFIG.SUPABASE_ANON_KEY}`,"Content-Type":"application/json",Prefer:"return=minimal"},body:JSON.stringify(row)});
+        if(!res.ok)throw new Error("insert "+res.status+" "+await res.text());
+      }else console.info("Feedback (not saved, Supabase not set up):",data,files.map(x=>x.file.name));
+      files.forEach(x=>x.url&&URL.revokeObjectURL(x.url));
       document.getElementById("contact-wrap").innerHTML=`<div class="contact-done"><span class="done-ico">${CHECK}</span><h3 style="font-size:26px;margin-top:16px">Thank you</h3><p style="color:var(--label);margin-top:8px">${data.email?"We read every message and will reply to you by email.":"We read every message. It helps a lot during testing."}</p></div>`;
-    }catch(_){err.textContent="The message didn't go through. Check your connection and try again.";send.disabled=false;send.textContent="Send message";}
+    }catch(ex){console.error("Feedback error:",ex);err.textContent=files.length?"The message or one of the files didn't go through. Check your connection and try again.":"The message didn't go through. Check your connection and try again.";send.disabled=false;send.textContent="Send message";}
   });
 })();
 
@@ -1357,7 +1454,7 @@ const UC=[
 ];
 const ucTrack=document.getElementById("uc-track");
 const ADD=`<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>`;
-ucTrack.innerHTML=UC.map(([img,pos,t,p,d,alt],i)=>`<article class="uc"><figure class="ph" style="margin:0"><img src="images/${img}.jpg" alt="${esc(alt)}" loading="eager" decoding="async" width="1100" height="733" style="object-position:${pos}"><div class="uc-deck">${cover(d,{mini:true,dots:false}).replace(/<\/div>$/,`<button class="uc-add" data-i="${i}" aria-label="Add ${esc(d.title)} to Alle">${ADD}</button></div>`)}</div></figure><h3>${esc(t)}</h3><p>${esc(p)}</p></article>`).join("");
+ucTrack.innerHTML=UC.map(([img,pos,t,p,d,alt],i)=>`<article class="uc"><figure class="ph" style="margin:0"><picture><source srcset="images/${img}.avif" type="image/avif"><img src="images/${img}.jpg" alt="${esc(alt)}" decoding="async" width="1536" height="1024" style="object-position:${pos}"></picture><div class="uc-deck">${cover(d,{mini:true,dots:false}).replace(/<\/div>$/,`<button class="uc-add" data-i="${i}" aria-label="Add ${esc(d.title)} to Alle">${ADD}</button></div>`)}</div></figure><h3>${esc(t)}</h3><p>${esc(p)}</p></article>`).join("");
 const modal=document.getElementById("modal");
 ucTrack.addEventListener("click",e=>{const b=e.target.closest(".uc-add");if(!b)return;openExample(UC[+b.dataset.i][4]);});
 function openExample(d){
