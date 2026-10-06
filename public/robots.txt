@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://alle.app/sitemap.xml
+
+Sitemap: https://allecards.app/sitemap.xml
