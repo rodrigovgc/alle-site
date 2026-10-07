@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Help and guides | Alle</title>
+<meta name="description" content="Step-by-step guides for Alle: add decks from Google Sheets, create decks with AI, study, share decks and add Alle to your Home Screen.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://allecards.app/help.html">
+<link rel="preload" href="/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Inter";src:url("/fonts/Inter-latin.woff2") format("woff2");font-weight:100 900;font-display:swap}
+:root{--ink:#0C0C0C;--label:#5F5C55;--muted:#9A968E;--line:#E7E3D9;--beige:#F6F4EC;--lilac:#E9E7FD;box-sizing:border-box}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{margin:0;font-family:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;color:var(--ink);background:#fff;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{width:min(1080px,100% - 40px);margin-inline:auto}
+.nav{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center;height:72px}
+.logo{display:inline-flex;align-items:center;gap:7px;font-size:25px;font-weight:700;letter-spacing:-0.035em;text-decoration:none}
+.logo svg{height:1em;width:auto}
+.back{display:inline-flex;align-items:center;gap:8px;min-height:42px;padding:0 18px;border-radius:999px;background:var(--ink);color:#fff;text-decoration:none;font-size:15px;font-weight:500}
+header.hero{background:var(--beige);padding:clamp(56px,8vw,104px) 0 clamp(40px,6vw,72px)}
+header.hero h1{margin:0;font-size:clamp(42px,6vw,76px);line-height:1;letter-spacing:-0.05em;font-weight:600}
+header.hero p{margin:18px 0 0;color:var(--label);font-size:clamp(17px,1.5vw,20px);max-width:38em}
+header.hero .meta{margin-top:22px;font-size:14px;color:var(--muted)}
+.layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:clamp(32px,6vw,88px);padding:clamp(40px,6vw,72px) 0 clamp(64px,8vw,112px)}
+.toc{position:sticky;top:100px;align-self:start;display:grid;gap:2px;font-size:14px}
+.toc b{font-size:13px;color:var(--muted);font-weight:500;margin-bottom:8px}
+.toc a{text-decoration:none;color:var(--label);padding:6px 0}
+.toc a:hover{color:var(--ink)}
+article{max-width:720px}
+article h2{font-size:clamp(22px,2vw,27px);letter-spacing:-0.025em;line-height:1.2;margin:48px 0 12px;font-weight:600}
+article h2:first-child{margin-top:0}
+article h3{font-size:18px;margin:26px 0 6px;font-weight:600;letter-spacing:-0.01em}
+article p,article li{color:#3E3C37}
+article ul{padding-left:20px}
+article li{margin:6px 0}
+.box{background:var(--beige);border-radius:20px;padding:20px 22px;margin:18px 0}
+.box p{margin:0}
+table{width:100%;border-collapse:collapse;font-size:15px;margin:14px 0}
+th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;font-size:14px;color:var(--label)}
+.tw{overflow-x:auto}
+footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer nav{display:flex;gap:20px}
+footer a{text-decoration:none;color:var(--label)}
+@media (max-width:860px){.layout{grid-template-columns:1fr}.toc{display:none}}
+.steps{counter-reset:s;list-style:none;padding:0}
+.steps li{counter-increment:s;position:relative;padding-left:40px;margin:14px 0}
+.steps li::before{content:counter(s);position:absolute;left:0;top:1px;width:26px;height:26px;border-radius:50%;background:var(--ink);color:#fff;font-size:13px;font-weight:600;display:grid;place-items:center}
+kbd{font-family:inherit;font-size:.92em;background:var(--beige);border-radius:6px;padding:1px 7px;white-space:nowrap}
+.tip{background:var(--lilac)}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap"><a class="logo" href="/" aria-label="Alle home"><svg viewBox="0 0 22 26" aria-hidden="true"><path d="M2.2 3.6Q2.2 2.4 3.4 2.2L7.6 1.4Q9 1.2 9 2.6V23.4Q9 24.8 7.6 24.6L3.4 23.8Q2.2 23.6 2.2 22.4Z M12.6 3.6Q12.6 2.4 13.8 2.2L18 1.4Q19.4 1.2 19.4 2.6V23.4Q19.4 24.8 18 24.6L13.8 23.8Q12.6 23.6 12.6 22.4Z" fill="currentColor"/></svg><span>Alle</span></a><a class="back" href="/">Back to Alle</a></div></header>
+<main>
+<header class="hero"><div class="wrap"><h1>Help and guides</h1><p>Everything you need to get going with Alle, step by step: adding decks, studying, sharing, and keeping Alle on your phone like an app.</p></div></header>
+<div class="wrap layout">
+<nav class="toc" aria-label="On this page"><b>On this page</b><a href="#start">Getting started</a><a href="#home-screen">Add Alle to your Home Screen</a><a href="#ready">Ready-made decks</a><a href="#sheets">Import from Google Sheets</a><a href="#ai">Create a deck with AI</a><a href="#study">Studying</a><a href="#edit">Editing and organising decks</a><a href="#share">Sharing decks</a><a href="#account">Your account</a><a href="#trouble">Troubleshooting</a></nav>
+<article>
+
+<h2 id="start">Getting started</h2>
+<p>Alle turns the things you need to know into flashcards. Each study session has up to 10 cards. You see one side, give the answer, and Alle tells you how you did.</p>
+<p>Alle uses <b>spaced repetition</b>: cards you get right come back after longer and longer breaks, and cards you miss come back sooner. So you spend your time on what you don't know yet, a few minutes a day.</p>
+<ol class="steps">
+<li>Open <a href="https://my.allecards.app/?auth=signup">my.allecards.app</a> and create an account with your name, email and a password.</li>
+<li>Confirm your email with the link we send you. You can open it on any device; the screen where you signed up continues on its own.</li>
+<li>Add your first deck: a ready-made one, your own Google Sheet, or one made with AI.</li>
+<li>Tap a deck to start a session.</li>
+</ol>
+
+<h2 id="home-screen">Add Alle to your Home Screen</h2>
+<p>Alle runs in your browser, but you can keep it on your Home Screen. It then opens full screen, without the browser bars, just like an app.</p>
+<h3>iPhone and iPad</h3>
+<ol class="steps">
+<li>Open <b>my.allecards.app</b> in <b>Safari</b>.</li>
+<li>Tap the <b>Share</b> button (the square with an arrow pointing up).</li>
+<li>Scroll down and tap <b>Add to Home Screen</b>, then <b>Add</b>.</li>
+<li>Open Alle from its new icon. Pull down at the top of your decks to refresh.</li>
+</ol>
+<h3>Android</h3>
+<ol class="steps">
+<li>Open <b>my.allecards.app</b> in <b>Chrome</b>.</li>
+<li>Tap the <b>⋮</b> menu, then <b>Add to Home screen</b> or <b>Install app</b>.</li>
+</ol>
+
+<h2 id="ready">Ready-made decks</h2>
+<p>Ready-made decks are the quickest way to see how Alle works: numbers, multiplication tables, flags, telling the time in Dutch, road signs, languages and more.</p>
+<ol class="steps">
+<li>In Alle, tap <b>+</b>, then <b>Browse ready-made decks</b>. (When you have no decks yet, they're right on the home screen.)</li>
+<li>Tap a deck to add it. Add as many as you like.</li>
+</ol>
+<p>You can also add them from the <a href="/#examples">deck library</a> on this website with <b>Add to my Alle</b>.</p>
+
+<h2 id="sheets">Import from Google Sheets</h2>
+<p>Any Google Sheet with two columns can become a deck: the front of each card in column A, the answer in column B.</p>
+<h3>1. Set up your sheet</h3>
+<ol class="steps">
+<li>In the first row, write a name for each column, for example <kbd>English</kbd> and <kbd>Dutch</kbd>. These become the labels on your cards.</li>
+<li>From the second row on, one card per row: what you see in column A, the answer in column B.</li>
+</ol>
+<div class="box tip"><p><b>Tips.</b> To accept more than one right answer, separate them with a vertical bar: <kbd>gaan|lopen</kbd>. To show a picture, put an image link in column A. A cell like <kbd>clock 6:30</kbd> shows a clock.</p></div>
+<h3>2. Publish it</h3>
+<ol class="steps">
+<li>In Google Sheets, choose <b>File → Share → Publish to web</b>.</li>
+<li>Under <b>Link</b>, pick the tab with your cards, and change <b>Web page</b> to <b>Comma-separated values (.csv)</b>.</li>
+<li>Click <b>Publish</b> and copy the link.</li>
+</ol>
+<p>Publishing makes the sheet readable by anyone with the link. Don't publish sheets with private information.</p>
+<h3>3. Add it to Alle</h3>
+<ol class="steps">
+<li>In Alle, tap <b>+</b>, then <b>Import from Google Sheets</b>.</li>
+<li>Paste the link. Alle fills in the deck name from your sheet; change it if you like.</li>
+<li>Tap <b>Import deck</b>.</li>
+</ol>
+<p>When you edit the sheet later, your changes show up in Alle the next time you study that deck.</p>
+
+<h2 id="ai">Create a deck with AI</h2>
+<p>No material yet? Alle writes a prompt you can give to ChatGPT, Claude, Gemini or any AI chat.</p>
+<ol class="steps">
+<li>In Alle, tap <b>+</b>, then <b>Create with AI</b>.</li>
+<li>Answer a few questions: the subject, the topic, what goes on each side, how many cards and the level.</li>
+<li>Copy the prompt and paste it into your AI chat.</li>
+<li>Copy the AI's whole reply, come back to Alle and paste it. You'll see a preview of the cards.</li>
+<li>Check a few answers (AI can make mistakes), give the deck a name, and tap <b>Create deck</b>.</li>
+</ol>
+<p>Already have the reply? Use <b>Paste AI deck prompt</b> to skip straight to pasting.</p>
+
+<h2 id="study">Studying</h2>
+<h3>Multiple choice or typing</h3>
+<p>New decks start with <b>multiple choice</b>: pick the right answer from four. When you're ready for a challenge, switch to <b>typing</b> in <b>Edit deck → Answer by</b>. Typing is the best way to really remember.</p>
+<h3>How answers are checked</h3>
+<ul>
+<li><b>Correct</b>: the card comes back after a longer break.</li>
+<li><b>Almost right</b>: a small typo. The card stays where it is, and Alle shows the letters that differ.</li>
+<li><b>Not this time</b>, or <b>Skip</b>: the card comes back sooner.</li>
+</ul>
+<h3>Let's fix these</h3>
+<p>Cards you miss come back at the end of the session. Rebuild the answer by tapping the words (or letters) in the right order. It helps the correct answer stick.</p>
+<h3>Shuffle</h3>
+<p>Tap <b>Shuffle decks</b> to mix cards from several decks into one session, and pick which decks to include.</p>
+
+<h2 id="edit">Editing and organising decks</h2>
+<ul>
+<li><b>Edit deck</b> (in each deck's <b>⋯</b> menu): change the colour, shape, name, answer mode and read-aloud language. Changes save on their own.</li>
+<li><b>Reorder decks</b> (in the menu behind your initials): drag decks into your own order. On a computer you can also drag decks directly.</li>
+<li><b>Repaint decks</b>: give all your decks fresh colours in one go.</li>
+<li><b>Reset progress</b>: start a deck over, as if you'd never studied it.</li>
+<li><b>Remove deck</b>: delete a deck and its progress.</li>
+</ul>
+
+<h2 id="share">Sharing decks</h2>
+<ol class="steps">
+<li>In a deck's <b>⋯</b> menu, tap <b>Share deck</b>.</li>
+<li>Send the link to anyone, by message, email or however you like.</li>
+</ol>
+<p>When they open it, Alle offers to add a copy to their decks. If they don't have an account yet, they create one first, and the deck is waiting right after. Your progress always stays private. To turn a link off, choose <b>Stop sharing</b>.</p>
+
+<h2 id="account">Your account</h2>
+<p>Tap your initials at the top right, then <b>Account</b>, to change your name, email, password, light or dark mode and deck colours. Forgot your password? On the sign-in screen, tap <b>Forgot password?</b> and we'll email you a link. You can delete your account at any time in <b>Account → Delete account</b>; this removes everything for good.</p>
+
+<h2 id="trouble">Troubleshooting</h2>
+<h3>I didn't get the confirmation email</h3>
+<p>Check your spam or junk folder, and mark the email as "not spam". Still nothing? On the waiting screen, tap <b>Resend email</b>.</p>
+<h3>“That link has expired or was already used”</h3>
+<p>Email links work once and expire after a while. Sign in normally, or ask for a new email.</p>
+<h3>My Google Sheet won't import</h3>
+<p>Make sure it's published to the web as <b>CSV</b> (not "Web page"), and that the first row has a name for both columns.</p>
+<h3>“Couldn't reach Alle”</h3>
+<p>Your connection dropped or something blocked the request. Check your internet connection, and if you use an ad or privacy blocker, try turning it off for my.allecards.app.</p>
+<h3>Still stuck?</h3>
+<p>Send us a message through the <a href="/#contact">contact form</a> on the homepage. We read every one.</p>
+</article>
+</div>
+</main>
+<footer><div class="wrap"><span>© 2026 Alle</span><nav aria-label="Legal"><a href="/help.html">Help</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/#contact">Contact</a></nav></div></footer>
+</body>
+</html>

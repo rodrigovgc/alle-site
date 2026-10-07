@@ -1109,7 +1109,9 @@ picture{display:contents}
   <div class="sheet-in">
     <div class="sheet-top"><h2 id="m-title">Add deck</h2><button class="circle" id="m-close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
     <div id="m-deck" style="margin-top:18px"></div>
-    <div class="way"><h3>Copy the sheet link</h3><p class="way-p">Paste it in Alle to add this deck to your library.</p>
+    <a class="pill" id="m-add" href="#" style="display:flex;justify-content:center;margin-top:16px">Add to my Alle</a>
+    <p class="way-p" style="text-align:center;margin-top:8px">Opens Alle and adds the deck. You'll sign in or create an account first if needed.</p>
+    <div class="way"><h3>Or copy the sheet link</h3><p class="way-p">Paste it in Alle, or make your own copy of the sheet to edit.</p>
       <div class="urlrow"><label for="m-url" class="sr">Sheet link</label><input id="m-url" readonly><button class="pill sm" id="m-copy">Copy</button></div>
       <p class="missing" id="m-miss" hidden>This example's sheet link hasn't been added yet.</p></div>
     <div class="row" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px"><a class="pill sm light" id="m-sheet" href="#" target="_blank" rel="noopener">Make a copy to edit</a><a class="pill sm light js-app" href="#">Open Alle</a></div>
@@ -1183,7 +1185,7 @@ picture{display:contents}
       <div class="foot-brand"><a class="logo" href="#top" data-logo aria-label="Alle home"></a><p>Flashcards for whatever you need to learn.</p></div>
       <nav class="foot-cols" aria-label="Footer">
         <div><p class="f-h">Product</p><a href="#features">Features</a><a href="#features">How it works</a><a href="#faq">FAQ</a></div>
-        <div><p class="f-h">Alle</p><a href="#contact">Contact</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="#" class="js-cookie-settings">Cookie settings</a></div>
+        <div><p class="f-h">Alle</p><a href="#contact">Contact</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/help.html">Help</a><a href="#" class="js-cookie-settings">Cookie settings</a></div>
         <div><p class="f-h">Account</p><a class="js-login" href="#">Login</a><a class="js-signup" href="#">Get started</a></div>
       </nav>
     </div>
@@ -1496,7 +1498,11 @@ const ADD=`<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="c
 ucTrack.innerHTML=UC.map(([img,pos,t,p,d,alt],i)=>`<article class="uc"><figure class="ph" style="margin:0"><picture><source srcset="/images/${img}.avif" type="image/avif"><img src="/images/${img}.jpg" alt="${esc(alt)}" decoding="async" width="1536" height="1024" style="object-position:${pos}"></picture><div class="uc-deck">${cover(d,{mini:true,dots:false}).replace(/<\/div>$/,`<button class="uc-add" data-i="${i}" aria-label="Add ${esc(d.title)} to Alle">${ADD}</button></div>`)}</div></figure><h3>${esc(t)}</h3><p>${esc(p)}</p></article>`).join("");
 const modal=document.getElementById("modal");
 ucTrack.addEventListener("click",e=>{const b=e.target.closest(".uc-add");if(!b)return;openExample(UC[+b.dataset.i][4]);});
+const APP_KEYS={"Road signs":"roadSigns","Basic Dutch":"basicDutch","Organic chemistry":"organicChemistry","Art history":"artHistory","Guitar chords":"guitarChords","Engineering Formula Sheet":"engineering","Portuguese":"portugueseWords"};
 function openExample(d){
+  const addKey=APP_KEYS[d.title];
+  const add=document.getElementById("m-add");
+  if(addKey){add.href=`${CONFIG.APP_URL}/?add=${addKey}`;add.style.display="flex";}else{add.style.display="none";}
   const url=(EXAMPLES[d.title]||{}).url||"";
   document.getElementById("m-title").textContent=`Add ${d.title}`;
   document.getElementById("m-deck").innerHTML=cover(d,{dots:false});
