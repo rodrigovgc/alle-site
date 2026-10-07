@@ -57,6 +57,8 @@ footer a{text-decoration:none;color:var(--label)}
 .steps li::before{content:counter(s);position:absolute;left:0;top:1px;width:26px;height:26px;border-radius:50%;background:var(--ink);color:#fff;font-size:13px;font-weight:600;display:grid;place-items:center}
 kbd{font-family:inherit;font-size:.92em;background:var(--beige);border-radius:6px;padding:1px 7px;white-space:nowrap}
 .tip{background:var(--lilac)}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;margin-top:4px;padding:12px 22px;border-radius:999px;background:var(--ink);color:#fff;text-decoration:none;font-weight:600}
+.cta-btn:hover{opacity:.9}
 </style>
 <link rel="stylesheet" href="/help-scenes.css">
 </head>
@@ -65,7 +67,7 @@ kbd{font-family:inherit;font-size:.92em;background:var(--beige);border-radius:6p
 <main>
 <header class="hero"><div class="wrap"><h1>Help and guides</h1><p>Everything you need to get going with Alle, step by step: adding decks, studying, sharing, and keeping Alle on your phone like an app.</p></div></header>
 <div class="wrap layout">
-<nav class="toc" aria-label="On this page"><b>On this page</b><a href="#start">Getting started</a><a href="#home-screen">Add Alle to your Home Screen</a><a href="#ready">Ready-made decks</a><a href="#sheets">Import from Google Sheets</a><a href="#ai">Create a deck with AI</a><a href="#study">Studying</a><a href="#edit">Editing and organising decks</a><a href="#share">Sharing decks</a><a href="#account">Your account</a><a href="#trouble">Troubleshooting</a></nav>
+<nav class="toc" aria-label="On this page"><b>On this page</b><a href="#start">Getting started</a><a href="#home-screen">Add Alle to your Home Screen</a><a href="#ready">Ready-made decks</a><a href="#sheets">Turn a Google Sheet into flashcards</a><a href="#ai">Create flashcards with AI</a><a href="#study">Studying</a><a href="#edit">Editing and organising decks</a><a href="#share">Sharing decks</a><a href="#account">Your account</a><a href="#trouble">Troubleshooting</a></nav>
 <article>
 
 <h2 id="start">Getting started</h2>
@@ -104,10 +106,11 @@ kbd{font-family:inherit;font-size:.92em;background:var(--beige);border-radius:6p
 </ol>
 <p>You can also add them from the <a href="/#examples">deck library</a> on this website with <b>Add to my Alle</b>.</p>
 
-<h2 id="sheets">Import from Google Sheets</h2>
+<h2 id="sheets">Turn a Google Sheet into flashcards</h2>
 <div class="help-scene" aria-hidden="true"><div class="sc sc-sheet"><div class="sc-spin"><div class="sc-gsheet"><div class="sc-gsheet__bar"><i></i> Dutch words</div><div class="sc-gsheet__row sc-gsheet__head"><span>English</span><span>Dutch</span></div><div class="sc-gsheet__row sc-row1"><span>to go</span><span>gaan</span></div><div class="sc-gsheet__row sc-row2"><span>the house</span><span>het huis</span></div><div class="sc-gsheet__row sc-row3"><span>thank you</span><span>dank je</span></div></div><div class="sc-spin__back"><div class="big-deck" style="--deck-fill: var(--deck-blue); --deck-deep: var(--deck-blue-deep);"><span class="mini-deck__meta">English → Dutch</span><span class="big-deck__title">Dutch words</span><span class="big-deck__count">3 cards</span><span class="big-deck__shape"><svg class="deck-shape" viewBox="443 19 80 80" aria-hidden="true"><path d="M443 99C465.091 99 483 81.0914 483 59V79C483 90.0457 491.954 99 503 99C514.046 99 523 90.0457 523 79V39C523 27.9543 514.046 19 503 19C491.954 19 483 27.9543 483 39V59C483 36.9086 465.091 19 443 19L443 99Z" fill="currentColor"></path></svg></span></div></div></div></div></div>
 <p>Any Google Sheet with two columns can become a deck: the front of each card in column A, the answer in column B.</p>
-<div class="box"><p><b>Start from our template.</b> The <a href="https://docs.google.com/spreadsheets/d/14JzUS98h2RsCVkGcT5UDpaAVETsMIXMUTvfZhPYqMKI/copy" target="_blank" rel="noopener">Alle deck template</a> is a ready-to-fill Google Sheet with the right columns. Open it and Google makes your own copy; fill in your cards and publish it as below.</p></div>
+<div class="box tpl"><p><b>Start from our template.</b> A ready-to-fill Google Sheet with the right two columns. Opening it gives you your own copy in Google Drive; fill in your cards and publish it as below.</p>
+<p><a class="cta-btn" href="/template" target="_blank" rel="noopener">Use the Google Sheet template <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p></div>
 <h3>1. Set up your sheet</h3>
 <ol class="steps">
 <li>In the first row, write a name for each column, for example <kbd>English</kbd> and <kbd>Dutch</kbd>. These become the labels on your cards.</li>
@@ -129,7 +132,7 @@ kbd{font-family:inherit;font-size:.92em;background:var(--beige);border-radius:6p
 </ol>
 <p>When you edit the sheet later, your changes show up in Alle the next time you study that deck.</p>
 
-<h2 id="ai">Create a deck with AI</h2>
+<h2 id="ai">Create flashcards with AI</h2>
 <div class="help-scene" aria-hidden="true"><div class="sc sc-ai"><div class="sc-bubble sc-bubble--me">Make 20 flashcards for learning Dutch…</div><div class="sc-bubble sc-bubble--ai"><span class="sc-dots"><i></i><i></i><i></i></span><span class="sc-csv">English,Dutch<br>to go,gaan<br>the house,het huis</span></div><div class="sc-ai__deck"><div class="mini-deck" style="--deck-fill: var(--deck-blue); --deck-deep: var(--deck-blue-deep);"><span class="mini-deck__meta">English → Dutch</span><span class="mini-deck__title">Dutch words</span><span class="mini-deck__shape"><svg class="deck-shape" viewBox="443 19 80 80" aria-hidden="true"><path d="M443 99C465.091 99 483 81.0914 483 59V79C483 90.0457 491.954 99 503 99C514.046 99 523 90.0457 523 79V39C523 27.9543 514.046 19 503 19C491.954 19 483 27.9543 483 39V59C483 36.9086 465.091 19 443 19L443 99Z" fill="currentColor"></path></svg></span></div></div></div></div>
 <p>No material yet? Alle writes a prompt you can give to ChatGPT, Claude, Gemini or any AI chat.</p>
 <ol class="steps">
@@ -143,6 +146,9 @@ kbd{font-family:inherit;font-size:.92em;background:var(--beige);border-radius:6p
 
 <h2 id="study">Studying</h2>
 <div class="help-scene" aria-hidden="true"><div class="sc sc-study"><div class="sc-qcard"><small>Sign</small><svg class="sc-sign" viewBox="0 0 100 100" role="img" aria-label="Priority road sign"><rect x="18" y="18" width="64" height="64" rx="6" transform="rotate(45 50 50)" fill="#fff" stroke="#1d1d1b" stroke-width="2.5"></rect><rect x="29" y="29" width="42" height="42" rx="2" transform="rotate(45 50 50)" fill="#F5C400"></rect></svg></div><div class="sc-opts"><span class="sc-opt">Give way</span><span class="sc-opt sc-opt--right">Priority road</span><span class="sc-opt">End of priority road</span></div></div></div>
+<h3 id="spaced-repetition">How spaced repetition works</h3>
+<p>Spaced repetition is a way of studying where you review each card just before you’re likely to forget it. Instead of going through a whole deck every time, you see the cards that need you today.</p>
+<p>In Alle, every card you get right waits longer before it comes back: two days at first, then four, then eight, up to about two weeks. If you’re almost right, the card keeps its place. If you miss it or skip it, it comes back the next day. Each session has up to 10 cards, starting with the ones that are due, so a few minutes a day is enough to keep everything fresh.</p>
 <h3>Multiple choice or typing</h3>
 <p>New decks start with <b>multiple choice</b>: pick the right answer from four. When you're ready for a challenge, switch to <b>typing</b> in <b>Edit deck → Answer by</b>. Typing is the best way to really remember.</p>
 <h3>How answers are checked</h3>

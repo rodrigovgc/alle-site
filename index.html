@@ -11,6 +11,27 @@
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="canonical" href="https://www.allecards.app/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Alle",
+  "url": "https://www.allecards.app/",
+  "description": "Alle is a free flashcard app for learning your own material. You can turn a Google Sheet into flashcards, create a flashcard deck with AI, or start with a ready-made deck, then study in short sessions that bring back the cards you need to practise.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Web browser",
+  "browserRequirements": "Works in the browser on iPhone, Android and computers.",
+  "isAccessibleForFree": true,
+  "featureList": [
+    "Turn a Google Sheet into flashcards",
+    "Create flashcards with AI",
+    "Ready-made flashcard decks",
+    "Spaced repetition",
+    "Multiple choice or typed answers"
+  ],
+  "inLanguage": "en"
+}
+</script>
 <!-- Share preview -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Alle">
@@ -431,6 +452,9 @@ textarea.field-in{min-height:96px;padding:14px 16px;line-height:1.45;resize:vert
 .faq-list details:first-child{border-top:1px solid var(--line-2)}
 summary{list-style:none;cursor:pointer;padding:26px 0;display:flex;justify-content:space-between;align-items:center;gap:24px;font-size:clamp(18px,1.4vw,21px);font-weight:500;letter-spacing:-0.02em}
 summary::-webkit-details-marker{display:none}
+summary .faq-q{font:inherit;letter-spacing:inherit;line-height:inherit;color:inherit;margin:0}
+details p a:not(.pill){color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+details p.faq-cta{margin-top:-10px}
 summary i{width:32px;height:32px;border-radius:50%;background:var(--beige);display:grid;place-items:center;flex:none;transition:transform .35s var(--ease),background .2s}
 summary i svg{width:14px;height:14px}
 details[open] summary i{transform:rotate(45deg);background:var(--ink);color:#fff}
@@ -1126,7 +1150,15 @@ picture{display:contents}
 <section class="sec tight" id="faq" style="padding-top:clamp(40px,4.5vw,72px)">
   <div class="wrap" style="max-width:780px">
     <h2 class="rv" style="text-align:center">Questions, answered.</h2>
-    <div class="faq-list rv d1" id="faq-list" style="margin-top:clamp(44px,5vw,72px)"></div>
+    <div class="faq-list rv d1" id="faq-list" style="margin-top:clamp(44px,5vw,72px)">
+      <details><summary><h3 class="faq-q">What is Alle?</h3><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>Alle is a free flashcard app for learning your own material. You can turn a Google Sheet into flashcards, create a flashcard deck with AI, or start with a ready-made deck, then study in short sessions that bring back the cards you need to practise. It works for anything that fits in two columns: languages, road signs, formulas, flags, times tables and more.</p></details>
+      <details><summary><h3 class="faq-q">Is Alle free?</h3><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>Yes, Alle is free to use. You sign up with your email, so your flashcard decks and progress stay with you on your phone and computer.</p></details>
+      <details><summary><h3 class="faq-q">Can I turn a Google Sheet into flashcards?</h3><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>Yes. Any Google Sheet with two columns can become flashcards in Alle: one column for the front of each card and one for the answer. Add it to Alle and every row becomes a card. <a href="/help#sheets">See how to turn a Google Sheet into flashcards</a>.</p><p class="faq-cta"><a class="pill sm" href="/template" target="_blank" rel="noopener">Use the Google Sheet template <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p></details>
+      <details><summary><h3 class="faq-q">Can I create flashcards with AI?</h3><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>Yes. Tell Alle what you want to learn and it writes a prompt for ChatGPT, Claude, Gemini or any other AI. Paste the AI’s reply back into Alle and your flashcards are ready to study. <a href="/help#ai">Learn how to create flashcards with AI</a>.</p></details>
+      <details><summary><h3 class="faq-q">What is spaced repetition, and how does Alle use it?</h3><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>Spaced repetition is a way of studying where you review each flashcard just before you’re likely to forget it. In Alle, cards you get right come back after longer and longer breaks, and cards you miss come back sooner, so you spend your time on what you don’t know yet. <a href="/help#spaced-repetition">Read how spaced repetition works in Alle</a>.</p></details>
+      <details><summary><h3 class="faq-q">Can I study with multiple choice or typed answers?</h3><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>Yes, both. Flashcard decks you create start with multiple choice, and you can switch any deck to typing in Edit deck. Cards you miss come back at the end of the session for another try.</p></details>
+      <details><summary><h3 class="faq-q">Can I use Alle on my phone?</h3><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>Yes. Alle works in the browser on iPhone, Android and computers, with nothing to install. Add it to your Home Screen and it opens full screen, like an app. <a href="/help#home-screen">See how to add Alle to your Home Screen</a>.</p></details>
+    </div>
   </div>
 </section>
 
@@ -1218,14 +1250,8 @@ const EXAMPLES = {
   "Engineering Formula Sheet":   { url:"https://docs.google.com/spreadsheets/d/e/2PACX-1vToovXZjYOv7ppNc3JIeYpRwCiIQP8dVNYHinlecZlx-8LzJTQF4CwUPmmQ-izWE19NpLNPHFnWN_1J/pub?gid=651437653&single=true&output=csv" },
   "Portuguese":                  { url:"https://docs.google.com/spreadsheets/d/e/2PACX-1vToovXZjYOv7ppNc3JIeYpRwCiIQP8dVNYHinlecZlx-8LzJTQF4CwUPmmQ-izWE19NpLNPHFnWN_1J/pub?gid=1063413453&single=true&output=csv" }
 };
-const FAQ = [
-  ["Is Alle free?","Yes, Alle is free to use. You bring the material, so there's nothing to buy."],
-  ["Do I need an account?","Yes, an email and password. That's how your decks and progress follow you from your phone to your computer."],
-  ["Do I need to be good with spreadsheets?","No. Two columns and a header row is all Alle reads. You can also start from a deck in the library and edit your copy."],
-  ["Does it work on iPhone and Android?","Yes. Alle runs in the browser. Add it to your home screen and it opens full screen, like an app."],
-  ["Can cards have pictures?","Yes. A card can show an image, which is how the road signs and flags decks work. Alle can also draw a clock for telling-the-time decks."],
-  ["Is it only for languages?","No. Road signs, flags, times tables, anatomy, legal terms. If it fits in two columns, it fits in Alle."]
-];
+// FAQ: the questions and answers are written in the HTML (section id="faq"), so they work without JavaScript.
+// Google Sheet template: the "/template" link forwards to the sheet; change its address in vercel.json.
 /* ======================================================== */
 
 document.querySelectorAll(".js-app").forEach(a=>a.href=CONFIG.APP_URL);
@@ -1417,7 +1443,6 @@ document.getElementById("mq1").innerHTML=mq(MQ1);document.getElementById("mq2").
 
 /* ---------- faq ---------- */
 const PLUS=`<i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i>`;
-document.getElementById("faq-list").innerHTML=FAQ.map(([qq,a])=>`<details><summary>${esc(qq)}${PLUS}</summary><p>${esc(a)}</p></details>`).join("");
 
 /* ---------- contact form (with attachments) ---------- */
 (function(){
