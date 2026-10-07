@@ -10,21 +10,21 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="canonical" href="https://allecards.app/">
+<link rel="canonical" href="https://www.allecards.app/">
 <!-- Share preview -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Alle">
 <meta property="og:title" content="Alle: Create your deck and start learning">
 <meta property="og:description" content="Turn the things you need to know into flashcards. From class notes and Google Sheets to road signs, languages and exam prep.">
-<meta property="og:url" content="https://allecards.app/">
-<meta property="og:image" content="https://allecards.app/og-image.jpg">
+<meta property="og:url" content="https://www.allecards.app/">
+<meta property="og:image" content="https://www.allecards.app/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Alle: Create your deck and start learning, with colourful flashcard decks">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Alle: Create your deck and start learning">
 <meta name="twitter:description" content="Turn the things you need to know into flashcards, and learn a little at a time.">
-<meta name="twitter:image" content="https://allecards.app/og-image.jpg">
+<meta name="twitter:image" content="https://www.allecards.app/og-image.jpg">
 <link rel="preload" href="/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>@font-face{font-family:"Inter";src:url("/fonts/Inter-latin.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
 /* ===== v15 ===== */
@@ -957,7 +957,7 @@ picture{display:contents}
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   if (!location.hash) window.addEventListener('load', () => window.scrollTo(0, 0));
 </script>
-<!-- Google Analytics: only loads after the visitor accepts (GDPR) -->
+<!-- Google Analytics + Hotjar: only load after the visitor accepts (GDPR) -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -968,6 +968,15 @@ picture{display:contents}
     document.head.appendChild(s);
     gtag('js', new Date());
     gtag('config', 'G-3EBDQ8XVL9', { anonymize_ip: true });
+    // Hotjar (heatmaps and recordings), same consent
+    (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:6790440,hjsv:6};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
   };
   try { if (localStorage.getItem('alle-consent') === 'granted') window.alleLoadAnalytics(); } catch (e) {}
 </script>
@@ -1110,8 +1119,7 @@ picture{display:contents}
     <div class="sheet-top"><h2 id="m-title">Add deck</h2><button class="circle" id="m-close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
     <div id="m-deck" style="margin-top:18px"></div>
     <a class="pill" id="m-add" href="#" style="display:flex;justify-content:center;margin-top:16px">Add to my Alle</a>
-    <button class="pill light" id="m-share" type="button" style="display:flex;justify-content:center;width:100%;margin-top:10px">Share this deck</button>
-    <p class="way-p" id="m-note" style="text-align:center;margin-top:10px">Opens Alle and adds the deck, after signing in or creating an account if needed.</p>
+    <button class="pill light" id="m-share" type="button" style="display:flex;justify-content:center;width:100%;margin-top:10px">Share deck with a friend</button>
   </div>
 </dialog>
 
@@ -1145,7 +1153,7 @@ picture{display:contents}
           <ul class="files" id="c-list" aria-live="polite"></ul>
         </div>
         <p class="form-msg" id="c-err" role="status"></p>
-        <p class="c-note">By sending, you agree that we store your message and any files to reply and improve Alle. See our <a href="/privacy.html">Privacy Policy</a>.</p>
+        <p class="c-note">By sending, you agree that we store your message and any files to reply and improve Alle. See our <a href="/privacy">Privacy Policy</a>.</p>
         <button class="pill" type="submit" id="c-send" style="justify-self:center;min-width:200px">Send message</button>
       </form>
     </div>
@@ -1182,7 +1190,7 @@ picture{display:contents}
       <div class="foot-brand"><a class="logo" href="#top" data-logo aria-label="Alle home"></a><p>Flashcards for whatever you need to learn.</p></div>
       <nav class="foot-cols" aria-label="Footer">
         <div><p class="f-h">Product</p><a href="#features">Features</a><a href="#features">How it works</a><a href="#faq">FAQ</a></div>
-        <div><p class="f-h">Alle</p><a href="#contact">Contact</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/help.html">Help</a><a href="#" class="js-cookie-settings">Cookie settings</a></div>
+        <div><p class="f-h">Alle</p><a href="#contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/help">Help</a><a href="#" class="js-cookie-settings">Cookie settings</a></div>
         <div><p class="f-h">Account</p><a class="js-login" href="#">Login</a><a class="js-signup" href="#">Get started</a></div>
       </nav>
     </div>
@@ -1495,7 +1503,7 @@ const UC=[
 ];
 const ucTrack=document.getElementById("uc-track");
 const ADD=`<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>`;
-ucTrack.innerHTML=UC.map(([img,pos,t,p,d,alt],i)=>`<article class="uc"><figure class="ph" style="margin:0"><picture><source srcset="/images/${img}.avif" type="image/avif"><img src="/images/${img}.jpg" alt="${esc(alt)}" decoding="async" width="1536" height="1024" style="object-position:${pos}"></picture><div class="uc-deck">${cover(d,{mini:true,dots:false}).replace(/<\/div>$/,`<button class="uc-add" data-i="${i}" aria-label="Add ${esc(d.title)} to Alle">${ADD}</button></div>`)}</div></figure><h3>${esc(t)}</h3><p>${esc(p)}</p></article>`).join("");
+ucTrack.innerHTML=UC.map(([img,pos,t,p,d,alt],i)=>`<article class="uc"><figure class="ph" style="margin:0"><picture><source type="image/avif" srcset="/images/${img}-768.avif 768w, /images/${img}.avif 1536w" sizes="(max-width: 620px) 82vw, 340px"><img src="/images/${img}-768.jpg" srcset="/images/${img}-768.jpg 768w, /images/${img}.jpg 1536w" sizes="(max-width: 620px) 82vw, 340px" alt="${esc(alt)}" decoding="async" loading="lazy" width="1536" height="1024" style="object-position:${pos}"></picture><div class="uc-deck">${cover(d,{mini:true,dots:false}).replace(/<\/div>$/,`<button class="uc-add" data-i="${i}" aria-label="Add ${esc(d.title)} to Alle">${ADD}</button></div>`)}</div></figure><h3>${esc(t)}</h3><p>${esc(p)}</p></article>`).join("");
 const modal=document.getElementById("modal");
 ucTrack.addEventListener("click",e=>{const b=e.target.closest(".uc-add");if(!b)return;openExample(UC[+b.dataset.i][4]);});
 let currentDeck=null;
@@ -1505,15 +1513,16 @@ function openExample(d){
   document.getElementById("m-title").textContent=`Add ${d.title}`;
   document.getElementById("m-deck").innerHTML=cover(d,{dots:false});
   document.getElementById("m-add").href=deckLink(d);
-  document.getElementById("m-share").textContent="Share this deck";
+  document.getElementById("m-share").textContent="Share deck with a friend";
   if(typeof modal.showModal==="function")modal.showModal();else modal.setAttribute("open","");
 }
 document.getElementById("m-share").addEventListener("click",async()=>{
   if(!currentDeck)return;
   const url=deckLink(currentDeck), btn=document.getElementById("m-share");
-  if(navigator.share){try{await navigator.share({title:currentDeck.title,text:`Study “${currentDeck.title}” on Alle`,url});}catch(e){}return;}
-  try{await navigator.clipboard.writeText(url);btn.textContent="Link copied";setTimeout(()=>btn.textContent="Share this deck",1800);}
-  catch(e){prompt("Copy this link",url);}
+  try{await navigator.clipboard.writeText(url);}
+  catch(e){const t=document.createElement("textarea");t.value=url;document.body.appendChild(t);t.select();document.execCommand("copy");t.remove();}
+  btn.textContent="Link copied!";
+  clearTimeout(btn._t);btn._t=setTimeout(()=>btn.textContent="Share deck with a friend",2000);
 });
 document.getElementById("m-close").onclick=()=>modal.close();
 modal.addEventListener("click",e=>{if(e.target===modal)modal.close();});
@@ -1547,7 +1556,7 @@ document.querySelectorAll(".rv").forEach(el=>io.observe(el));
 </script>
 
 <div class="consent" id="consent" role="dialog" aria-label="Cookies" hidden>
-  <p>We'd like to use Google Analytics to understand how people find Alle. It sets cookies, so it only runs if you agree. <a href="/privacy.html#cookies">Learn more</a></p>
+  <p>We'd like to use Google Analytics and Hotjar to understand how people find and use Alle. They set cookies, so they only run if you agree. <a href="/privacy#cookies">Learn more</a></p>
   <div class="row"><button class="no" type="button" id="consent-no">No thanks</button><button class="yes" type="button" id="consent-yes">Accept</button></div>
 </div>
 <script>
