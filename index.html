@@ -1110,11 +1110,8 @@ picture{display:contents}
     <div class="sheet-top"><h2 id="m-title">Add deck</h2><button class="circle" id="m-close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
     <div id="m-deck" style="margin-top:18px"></div>
     <a class="pill" id="m-add" href="#" style="display:flex;justify-content:center;margin-top:16px">Add to my Alle</a>
-    <p class="way-p" style="text-align:center;margin-top:8px">Opens Alle and adds the deck. You'll sign in or create an account first if needed.</p>
-    <div class="way"><h3>Or copy the sheet link</h3><p class="way-p">Paste it in Alle, or make your own copy of the sheet to edit.</p>
-      <div class="urlrow"><label for="m-url" class="sr">Sheet link</label><input id="m-url" readonly><button class="pill sm" id="m-copy">Copy</button></div>
-      <p class="missing" id="m-miss" hidden>This example's sheet link hasn't been added yet.</p></div>
-    <div class="row" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px"><a class="pill sm light" id="m-sheet" href="#" target="_blank" rel="noopener">Make a copy to edit</a><a class="pill sm light js-app" href="#">Open Alle</a></div>
+    <button class="pill light" id="m-share" type="button" style="display:flex;justify-content:center;width:100%;margin-top:10px">Share this deck</button>
+    <p class="way-p" id="m-note" style="text-align:center;margin-top:10px">Opens Alle and adds the deck, after signing in or creating an account if needed.</p>
   </div>
 </dialog>
 
@@ -1485,38 +1482,41 @@ document.getElementById("faq-list").innerHTML=FAQ.map(([qq,a])=>`<details><summa
 /* ---------- photography ---------- */
 document.querySelectorAll("path[data-shape]").forEach(p=>p.setAttribute("d",SHAPES[p.dataset.shape]));
 const UC=[
-  ["portrait","50% 35%","A new language","The words from this week's class, not a stranger's course.",{front:"English",back:"Dutch",title:"Basic Dutch",colour:"lilac",shape:"bowls"},"Portrait of a smiling young woman outdoors"],
-  ["chemistry","40% 40%","Exam season","Formulas and terms, straight from your own notes.",{front:"Formula",back:"Name",title:"Organic chemistry",colour:"mint",shape:"quad"},"A student studying chemistry outdoors with a phone and textbook"],
-  ["arts","38% 40%","Art history","Put a name to every painting before the museum trip.",{front:"Painting",back:"Artist",title:"Art history",colour:"cream",shape:"swirl"},"A couple looking at a phone together in an art museum"],
-  ["music","42% 40%","Music theory","Chords, scales and intervals, one card at a time.",{front:"Chord",back:"Notes",title:"Guitar chords",colour:"pink",shape:"ovals"},"A young woman smiling at her phone in a room with a piano and guitar"],
-  ["math","55% 40%","Engineering","The formulas you need for the exam, ready to recall.",{front:"Formula",back:"Name",title:"Engineering Formula Sheet",colour:"sky",shape:"bowls"},"A man studying at home on a laptop with a maths textbook"],
-  ["gym","48% 40%","Between everything else","A session fits between sets, classes or coffees.",{front:"English",back:"Portuguese",title:"Portuguese",colour:"coral",shape:"dpill"},"A young woman checking her phone outside a gym after a workout"],
-  ["traffic_signs","40% 50%","Driving theory","Learn every sign before the exam, a few at a time.",{front:"Sign",back:"Meaning",title:"Road signs",colour:"yellow",shape:"wave"},"A young woman at a sunny table studying road signs on her phone"]
+  ["portrait","50% 35%","A new language","The words from this week's class, not a stranger's course.",{front:"English",back:"French",title:"Basic French",colour:"lilac",shape:"bowls",key:"basicFrench"},"Portrait of a smiling young woman outdoors"],
+  ["chemistry","40% 40%","Exam season","Formulas and terms, straight from your own notes.",{front:"Formula",back:"Name",title:"Organic chemistry",colour:"mint",shape:"quad",key:"organicChemistry"},"A student studying chemistry outdoors with a phone and textbook"],
+  ["arts","38% 40%","Art history","Put a name to every painting before the museum trip.",{front:"Painting",back:"Artist",title:"Art history",colour:"lime",shape:"swirl",key:"artHistory"},"A couple looking at a phone together in an art museum"],
+  ["music","42% 40%","Music theory","Chords, scales and intervals, one card at a time.",{front:"Chord",back:"Notes",title:"Guitar chords",colour:"pink",shape:"ovals",key:"guitarChords"},"A young woman smiling at her phone in a room with a piano and guitar"],
+  ["math","55% 40%","Engineering","The formulas you need for the exam, ready to recall.",{front:"Formula",back:"Name",title:"Engineering Formula Sheet",colour:"sky",shape:"bowls",key:"engineering"},"A man studying at home on a laptop with a maths textbook"],
+  ["gym","48% 40%","Between everything else","A session fits between sets, classes or coffees.",{front:"Digit",back:"Portuguese",title:"Numbers in Portuguese",colour:"coral",shape:"pinwheel",key:"numbersPortuguese"},"A young woman checking her phone outside a gym after a workout"],
+  ["traffic_signs","40% 50%","Driving theory","Learn every sign before the exam, a few at a time.",{front:"Sign",back:"Meaning",title:"Road signs",colour:"yellow",shape:"wave",key:"roadSigns"},"A young woman at a sunny table studying road signs on her phone"],
+  ["travel-flags","40% 35%","Before the flight","Put a country to every flag while you wait to board.",{front:"Flag",back:"Country",title:"Flags of the world",colour:"sky",shape:"dpill",key:"flagsWorld"},"A smiling older woman using a tablet at an airport gate"],
+  ["homework-math","45% 40%","Homework","Times tables, a few minutes after school.",{front:"Problem",back:"Answer",title:"Multiplication tables",colour:"mint",shape:"bowls",key:"multiplication"},"A boy smiling at a tablet at his desk while doing homework"],
+  ["station-clock","50% 35%","Life in a new country","Read the clock the Dutch way: half zeven is 6:30.",{front:"Clock",back:"Dutch",title:"Telling time in Dutch",colour:"lilac",shape:"leaves",key:"dutchClock"},"An older man smiling at his phone on a train platform in Brussels"]
 ];
 const ucTrack=document.getElementById("uc-track");
 const ADD=`<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>`;
 ucTrack.innerHTML=UC.map(([img,pos,t,p,d,alt],i)=>`<article class="uc"><figure class="ph" style="margin:0"><picture><source srcset="/images/${img}.avif" type="image/avif"><img src="/images/${img}.jpg" alt="${esc(alt)}" decoding="async" width="1536" height="1024" style="object-position:${pos}"></picture><div class="uc-deck">${cover(d,{mini:true,dots:false}).replace(/<\/div>$/,`<button class="uc-add" data-i="${i}" aria-label="Add ${esc(d.title)} to Alle">${ADD}</button></div>`)}</div></figure><h3>${esc(t)}</h3><p>${esc(p)}</p></article>`).join("");
 const modal=document.getElementById("modal");
 ucTrack.addEventListener("click",e=>{const b=e.target.closest(".uc-add");if(!b)return;openExample(UC[+b.dataset.i][4]);});
-const APP_KEYS={"Road signs":"roadSigns","Basic Dutch":"basicDutch","Organic chemistry":"organicChemistry","Art history":"artHistory","Guitar chords":"guitarChords","Engineering Formula Sheet":"engineering","Portuguese":"portugueseWords"};
+let currentDeck=null;
+function deckLink(d){return `${CONFIG.APP_URL}/?add=${d.key}`;}
 function openExample(d){
-  const addKey=APP_KEYS[d.title];
-  const add=document.getElementById("m-add");
-  if(addKey){add.href=`${CONFIG.APP_URL}/?add=${addKey}`;add.style.display="flex";}else{add.style.display="none";}
-  const url=(EXAMPLES[d.title]||{}).url||"";
+  currentDeck=d;
   document.getElementById("m-title").textContent=`Add ${d.title}`;
   document.getElementById("m-deck").innerHTML=cover(d,{dots:false});
-  const inp=document.getElementById("m-url"),copy=document.getElementById("m-copy"),sheet=document.getElementById("m-sheet");
-  inp.value=url||"Link coming soon";copy.disabled=!url;copy.textContent="Copy";
-  document.getElementById("m-miss").hidden=!!url;
-  const id=(url.match(/\/spreadsheets\/d\/(?!e\/)([^/]+)/)||[])[1];
-  if(id){sheet.href=`https://docs.google.com/spreadsheets/d/${id}/copy`;sheet.style.display="";sheet.style.pointerEvents="";sheet.style.opacity="";}
-  else{sheet.removeAttribute("href");sheet.style.display="none";}
+  document.getElementById("m-add").href=deckLink(d);
+  document.getElementById("m-share").textContent="Share this deck";
   if(typeof modal.showModal==="function")modal.showModal();else modal.setAttribute("open","");
 }
+document.getElementById("m-share").addEventListener("click",async()=>{
+  if(!currentDeck)return;
+  const url=deckLink(currentDeck), btn=document.getElementById("m-share");
+  if(navigator.share){try{await navigator.share({title:currentDeck.title,text:`Study “${currentDeck.title}” on Alle`,url});}catch(e){}return;}
+  try{await navigator.clipboard.writeText(url);btn.textContent="Link copied";setTimeout(()=>btn.textContent="Share this deck",1800);}
+  catch(e){prompt("Copy this link",url);}
+});
 document.getElementById("m-close").onclick=()=>modal.close();
 modal.addEventListener("click",e=>{if(e.target===modal)modal.close();});
-document.getElementById("m-copy").onclick=async e=>{const b=e.currentTarget,v=document.getElementById("m-url").value;try{await navigator.clipboard.writeText(v);}catch{document.getElementById("m-url").select();}b.textContent="Copied";setTimeout(()=>b.textContent="Copy",1500);};
 const ucStep=()=>ucTrack.querySelector(".uc").getBoundingClientRect().width+16;
 document.getElementById("uc-prev").onclick=()=>ucTrack.scrollBy({left:-ucStep(),behavior:RM?"auto":"smooth"});
 document.getElementById("uc-next").onclick=()=>ucTrack.scrollBy({left:ucStep(),behavior:RM?"auto":"smooth"});
