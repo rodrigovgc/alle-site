@@ -24,4 +24,4 @@ User-agent: CCBot
 User-agent: Applebot-Extended
 Disallow: /
 
-Sitemap: https://www.allecards.app/sitemap.xml
+Sitemap: https://allecards.app/sitemap.xml
