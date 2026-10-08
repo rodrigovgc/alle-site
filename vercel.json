@@ -1,11 +1,4 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false,
-  "redirects": [
-    {
-      "source": "/template",
-      "destination": "https://docs.google.com/spreadsheets/d/14JzUS98h2RsCVkGcT5UDpaAVETsMIXMUTvfZhPYqMKI/copy",
-      "permanent": false
-    }
-  ]
+  "trailingSlash": false
 }
