@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Create Flashcards and Start Learning | Alle</title>
-<meta name="description" content="Turn your class notes into flashcards with Google Sheets, create a deck with AI, or start with a ready-made deck. Learn at your own pace with Alle.">
+<title>Alle | Flashcard App for What You Need to Learn</title>
+<meta name="description" content="Alle is a free flashcard app for learning your own material. Turn a Google Sheet into flashcards, create flashcards with AI, or start with a ready-made deck.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -14,37 +14,71 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Alle",
-  "url": "https://www.allecards.app/",
-  "description": "Alle is a free flashcard app for learning your own material. You can turn a Google Sheet into flashcards, create a flashcard deck with AI, or start with a ready-made deck, then study in short sessions that bring back the cards you need to practise.",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "Web browser",
-  "browserRequirements": "Works in the browser on iPhone, Android and computers.",
-  "isAccessibleForFree": true,
-  "featureList": [
-    "Turn a Google Sheet into flashcards",
-    "Create flashcards with AI",
-    "Ready-made flashcard decks",
-    "Spaced repetition",
-    "Multiple choice or typed answers"
-  ],
-  "inLanguage": "en"
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.allecards.app/#organization",
+      "name": "Alle",
+      "url": "https://www.allecards.app/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.allecards.app/apple-touch-icon.png",
+        "width": 180,
+        "height": 180
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.allecards.app/#website",
+      "name": "Alle",
+      "alternateName": [
+        "allecards.app"
+      ],
+      "url": "https://www.allecards.app/",
+      "description": "Alle is a free flashcard app for learning your own material.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://www.allecards.app/#organization"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://www.allecards.app/#app",
+      "name": "Alle",
+      "url": "https://www.allecards.app/",
+      "description": "Alle is a free flashcard app for learning your own material. You can turn a Google Sheet into flashcards, create a flashcard deck with AI, or start with a ready-made deck, then study in short sessions that bring back the cards you need to practise.",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web browser",
+      "browserRequirements": "Works in the browser on iPhone, Android and computers.",
+      "isAccessibleForFree": true,
+      "featureList": [
+        "Turn a Google Sheet into flashcards",
+        "Create flashcards with AI",
+        "Ready-made flashcard decks",
+        "Spaced repetition",
+        "Multiple choice or typed answers"
+      ],
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://www.allecards.app/#organization"
+      }
+    }
+  ]
 }
 </script>
 <!-- Share preview -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Alle">
-<meta property="og:title" content="Create Flashcards and Start Learning | Alle">
-<meta property="og:description" content="Turn your class notes into flashcards with Google Sheets, create a deck with AI, or start with a ready-made deck. Learn at your own pace with Alle.">
+<meta property="og:title" content="Alle | Flashcard App for What You Need to Learn">
+<meta property="og:description" content="Alle is a free flashcard app for learning your own material. Turn a Google Sheet into flashcards, create flashcards with AI, or start with a ready-made deck.">
 <meta property="og:url" content="https://www.allecards.app/">
 <meta property="og:image" content="https://www.allecards.app/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Alle: Create your deck and start learning, with colourful flashcard decks">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Create Flashcards and Start Learning | Alle">
-<meta name="twitter:description" content="Turn your class notes into flashcards with Google Sheets, create a deck with AI, or start with a ready-made deck. Learn at your own pace with Alle.">
+<meta name="twitter:title" content="Alle | Flashcard App for What You Need to Learn">
+<meta name="twitter:description" content="Alle is a free flashcard app for learning your own material. Turn a Google Sheet into flashcards, create flashcards with AI, or start with a ready-made deck.">
 <meta name="twitter:image" content="https://www.allecards.app/og-image.jpg">
 <link rel="preload" href="/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>@font-face{font-family:"Inter";src:url("/fonts/Inter-latin.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
@@ -1009,9 +1043,9 @@ picture{display:contents}
 
 <header class="nav" id="nav">
   <div class="wrap">
-    <a class="logo" href="#top" aria-label="Alle home" data-logo></a>
+    <a class="logo" href="#top" aria-label="Alle home" data-logo><svg viewBox="0 0 22 26" aria-hidden="true"><path d="M2.2 3.6Q2.2 2.4 3.4 2.2L7.6 1.4Q9 1.2 9 2.6V23.4Q9 24.8 7.6 24.6L3.4 23.8Q2.2 23.6 2.2 22.4Z M12.6 3.6Q12.6 2.4 13.8 2.2L18 1.4Q19.4 1.2 19.4 2.6V23.4Q19.4 24.8 18 24.6L13.8 23.8Q12.6 23.6 12.6 22.4Z" fill="currentColor"></path></svg><span>Alle</span></a>
     <nav class="nav-links" aria-label="Main"><a href="#features">Features</a><a href="#examples">Deck library</a><a href="#ai">Create with AI</a><a href="#faq">FAQ</a></nav>
-    <div class="nav-right"><a class="login js-login" href="#">Log in</a><a class="pill sm js-signup" href="#">Get started</a></div>
+    <div class="nav-right"><a class="login js-login" href="https://my.allecards.app/?auth=login">Log in</a><a class="pill sm js-signup" href="https://my.allecards.app/?auth=signup">Get started</a></div>
   </div>
 </header>
 
@@ -1024,7 +1058,7 @@ picture{display:contents}
     <h1 class="t-in" style="animation-delay:.05s">Create your deck and<br class="br-h"> start learning</h1>
     <h2 class="sub t-in" style="animation-delay:.18s">Turn your class notes into flashcards with a Google Sheet, or pick a ready-made deck and start learning right away.</h2>
     <div class="hero-ctas t-in" style="animation-delay:.36s">
-      <a class="pill js-signup" href="#">Start learning free <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="pill js-signup" href="https://my.allecards.app/?auth=signup">Start learning free <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a class="pill line" href="#examples">Explore the library</a>
     </div>
   </div>
@@ -1134,7 +1168,7 @@ picture{display:contents}
 <section class="sec examples" id="examples">
   <div class="wrap"><div class="uc-head rv"><div style="max-width:820px"><h2>Whatever you're learning.</h2><p class="lead" style="margin-top:20px">A language for class, signs for the driving test, formulas for the exam.<br class="br-d"> If it fits in two columns, it fits in Alle.</p></div>
     <div class="uc-nav"><button id="uc-prev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button><button id="uc-next" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button></div></div></div>
-  <div class="uc-track" id="uc-track"></div>
+  <div class="uc-track" id="uc-track"><article class="uc"><figure class="ph" style="margin:0"><picture><source type="image/avif" srcset="/images/portrait-768.avif 768w, /images/portrait.avif 1536w" sizes="(max-width: 620px) 82vw, 340px"><img src="/images/portrait-768.jpg" srcset="/images/portrait-768.jpg 768w, /images/portrait.jpg 1536w" sizes="(max-width: 620px) 82vw, 340px" alt="Portrait of a smiling young woman outdoors" decoding="async" loading="lazy" width="1536" height="1024" style="object-position:50% 35%"></picture><div class="uc-deck"><div class="deck c-lilac mini"><div class="cols">English <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg> French</div><div class="title">Basic French</div><div class="count">&nbsp;</div><svg class="art" viewBox="0 0 100 100" aria-hidden="true"><path d="M0 0H100A50 50 0 0 1 0 0ZM0 51H100A50 50 0 0 1 0 51Z" fill="var(--s)"></path></svg><button class="uc-add" data-i="0" aria-label="Add Basic French to Alle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></button></div></div></figure><h3>A new language</h3><p>The words from this week's class, not a stranger's course.</p></article><article class="uc"><figure class="ph" style="margin:0"><picture><source type="image/avif" srcset="/images/chemistry-768.avif 768w, /images/chemistry.avif 1536w" sizes="(max-width: 620px) 82vw, 340px"><img src="/images/chemistry-768.jpg" srcset="/images/chemistry-768.jpg 768w, /images/chemistry.jpg 1536w" sizes="(max-width: 620px) 82vw, 340px" alt="A student studying chemistry outdoors with a phone and textbook" decoding="async" loading="lazy" width="1536" height="1024" style="object-position:40% 40%"></picture><div class="uc-deck"><div class="deck c-mint mini"><div class="cols">Formula <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg> Name</div><div class="title">Organic chemistry</div><div class="count">&nbsp;</div><svg class="art" viewBox="0 0 100 100" aria-hidden="true"><path d="M0 50L0 0A50 50 0 0 1 50 50ZM50 50L50 0A50 50 0 0 1 100 50ZM0 50L50 50A50 50 0 0 1 0 100ZM50 50L100 50A50 50 0 0 1 50 100Z" fill="var(--s)"></path></svg><button class="uc-add" data-i="1" aria-label="Add Organic chemistry to Alle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></button></div></div></figure><h3>Exam season</h3><p>Formulas and terms, straight from your own notes.</p></article><article class="uc"><figure class="ph" style="margin:0"><picture><source type="image/avif" srcset="/images/arts-768.avif 768w, /images/arts.avif 1536w" sizes="(max-width: 620px) 82vw, 340px"><img src="/images/arts-768.jpg" srcset="/images/arts-768.jpg 768w, /images/arts.jpg 1536w" sizes="(max-width: 620px) 82vw, 340px" alt="A couple looking at a phone together in an art museum" decoding="async" loading="lazy" width="1536" height="1024" style="object-position:38% 40%"></picture><div class="uc-deck"><div class="deck c-lime mini"><div class="cols">Painting <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg> Artist</div><div class="title">Art history</div><div class="count">&nbsp;</div><svg class="art" viewBox="0 0 100 100" aria-hidden="true"><path d="M0 50L0 0A50 50 0 0 1 50 50ZM50 0L100 0A50 50 0 0 1 50 50ZM100 50L100 100A50 50 0 0 1 50 50ZM50 100L0 100A50 50 0 0 1 50 50Z" fill="var(--s)"></path></svg><button class="uc-add" data-i="2" aria-label="Add Art history to Alle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></button></div></div></figure><h3>Art history</h3><p>Put a name to every painting before the museum trip.</p></article><article class="uc"><figure class="ph" style="margin:0"><picture><source type="image/avif" srcset="/images/music-768.avif 768w, /images/music.avif 1536w" sizes="(max-width: 620px) 82vw, 340px"><img src="/images/music-768.jpg" srcset="/images/music-768.jpg 768w, /images/music.jpg 1536w" sizes="(max-width: 620px) 82vw, 340px" alt="A young woman smiling at her phone in a room with a piano and guitar" decoding="async" loading="lazy" width="1536" height="1024" style="object-position:42% 40%"></picture><div class="uc-deck"><div class="deck c-pink mini"><div class="cols">Chord <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg> Notes</div><div class="title">Guitar chords</div><div class="count">&nbsp;</div><svg class="art" viewBox="0 0 100 100" aria-hidden="true"><path d="M24 0A24 50 0 1 1 24 100A24 50 0 1 1 24 0ZM76 0A24 50 0 1 1 76 100A24 50 0 1 1 76 0Z" fill="var(--s)"></path></svg><button class="uc-add" data-i="3" aria-label="Add Guitar chords to Alle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></button></div></div></figure><h3>Music theory</h3><p>Chords, scales and intervals, one card at a time.</p></article><article class="uc"><figure class="ph" style="margin:0"><picture><source type="image/avif" srcset="/images/math-768.avif 768w, /images/math.avif 1536w" sizes="(max-width: 620px) 82vw, 340px"><img src="/images/math-768.jpg" srcset="/images/math-768.jpg 768w, /images/math.jpg 1536w" sizes="(max-width: 620px) 82vw, 340px" alt="A man studying at home on a laptop with a maths textbook" decoding="async" loading="lazy" width="1536" height="1024" style="object-position:55% 40%"></picture><div class="uc-deck"><div class="deck c-sky mini"><div class="cols">Formula <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg> Name</div><div class="title">Engineering Formula Sheet</div><div class="count">&nbsp;</div><svg class="art" viewBox="0 0 100 100" aria-hidden="true"><path d="M0 0H100A50 50 0 0 1 0 0ZM0 51H100A50 50 0 0 1 0 51Z" fill="var(--s)"></path></svg><button class="uc-add" data-i="4" aria-label="Add Engineering Formula Sheet to Alle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></button></div></div></figure><h3>Engineering</h3><p>The formulas you need for the exam, ready to recall.</p></article><article class="uc"><figure class="ph" style="margin:0"><picture><source type="image/avif" srcset="/images/gym-768.avif 768w, /images/gym.avif 1536w" sizes="(max-width: 620px) 82vw, 340px"><img src="/images/gym-768.jpg" srcset="/images/gym-768.jpg 768w, /images/gym.jpg 1536w" sizes="(max-width: 620px) 82vw, 340px" alt="A young woman checking her phone outside a gym after a workout" decoding="async" loading="lazy" width="1536" height="1024" style="object-position:48% 40%"></picture><div class="uc-deck"><div class="deck c-coral mini"><div class="cols">Digit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg> Portuguese</div><div class="title">Numbers in Portuguese</div><div class="count">&nbsp;</div><svg class="art" viewBox="0 0 100 100" aria-hidden="true"><path d="M0 0L50 0A50 50 0 0 1 0 50ZM50 50L50 0A50 50 0 0 1 100 50ZM50 50L50 100A50 50 0 0 1 0 50ZM100 100L50 100A50 50 0 0 1 100 50Z" fill="var(--s)"></path></svg><button class="uc-add" data-i="5" aria-label="Add Numbers in Portuguese to Alle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></button></div></div></figure><h3>Between everything else</h3><p>A session fits between sets, classes or coffees.</p></article><article class="uc"><figure class="ph" style="margin:0"><picture><source type="image/avif" srcset="/images/traffic_signs-768.avif 768w, /images/traffic_signs.avif 1536w" sizes="(max-width: 620px) 82vw, 340px"><img src="/images/traffic_signs-768.jpg" srcset="/images/traffic_signs-768.jpg 768w, /images/traffic_signs.jpg 1536w" sizes="(max-width: 620px) 82vw, 340px" alt="A young woman at a sunny table studying road signs on her phone" decoding="async" loading="lazy" width="1536" height="1024" style="object-position:40% 50%"></picture><div class="uc-deck"><div class="deck c-yellow mini"><div class="cols">Sign <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg> Meaning</div><div class="title">Road signs</div><div class="count">&nbsp;</div><svg class="art" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0A50 50 0 0 1 50 100ZM50 0A34 25 0 0 0 50 50ZM50 50A34 25 0 0 0 50 100Z" fill="var(--s)"></path></svg><button class="uc-add" data-i="6" aria-label="Add Road signs to Alle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></button></div></div></figure><h3>Driving theory</h3><p>Learn every sign before the exam, a few at a time.</p></article><article class="uc"><figure class="ph" style="margin:0"><picture><source type="image/avif" srcset="/images/travel-flags-768.avif 768w, /images/travel-flags.avif 1536w" sizes="(max-width: 620px) 82vw, 340px"><img src="/images/travel-flags-768.jpg" srcset="/images/travel-flags-768.jpg 768w, /images/travel-flags.jpg 1536w" sizes="(max-width: 620px) 82vw, 340px" alt="A smiling older woman using a tablet at an airport gate" decoding="async" loading="lazy" width="1536" height="1024" style="object-position:40% 35%"></picture><div class="uc-deck"><div class="deck c-sky mini"><div class="cols">Flag <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg> Country</div><div class="title">Flags of the world</div><div class="count">&nbsp;</div><svg class="art" viewBox="0 0 100 100" aria-hidden="true"><path d="M0 0A50 50 0 0 1 0 100ZM54 23A23 23 0 0 1 100 23V77A23 23 0 0 1 54 77Z" fill="var(--s)"></path></svg><button class="uc-add" data-i="7" aria-label="Add Flags of the world to Alle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></button></div></div></figure><h3>Before the flight</h3><p>Put a country to every flag while you wait to board.</p></article><article class="uc"><figure class="ph" style="margin:0"><picture><source type="image/avif" srcset="/images/homework-math-768.avif 768w, /images/homework-math.avif 1536w" sizes="(max-width: 620px) 82vw, 340px"><img src="/images/homework-math-768.jpg" srcset="/images/homework-math-768.jpg 768w, /images/homework-math.jpg 1536w" sizes="(max-width: 620px) 82vw, 340px" alt="A boy smiling at a tablet at his desk while doing homework" decoding="async" loading="lazy" width="1536" height="1024" style="object-position:45% 40%"></picture><div class="uc-deck"><div class="deck c-mint mini"><div class="cols">Problem <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg> Answer</div><div class="title">Multiplication tables</div><div class="count">&nbsp;</div><svg class="art" viewBox="0 0 100 100" aria-hidden="true"><path d="M0 0H100A50 50 0 0 1 0 0ZM0 51H100A50 50 0 0 1 0 51Z" fill="var(--s)"></path></svg><button class="uc-add" data-i="8" aria-label="Add Multiplication tables to Alle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></button></div></div></figure><h3>Homework</h3><p>Times tables, a few minutes after school.</p></article><article class="uc"><figure class="ph" style="margin:0"><picture><source type="image/avif" srcset="/images/station-clock-768.avif 768w, /images/station-clock.avif 1536w" sizes="(max-width: 620px) 82vw, 340px"><img src="/images/station-clock-768.jpg" srcset="/images/station-clock-768.jpg 768w, /images/station-clock.jpg 1536w" sizes="(max-width: 620px) 82vw, 340px" alt="An older man smiling at his phone on a train platform in Brussels" decoding="async" loading="lazy" width="1536" height="1024" style="object-position:50% 35%"></picture><div class="uc-deck"><div class="deck c-lilac mini"><div class="cols">Clock <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg> Dutch</div><div class="title">Telling time in Dutch</div><div class="count">&nbsp;</div><svg class="art" viewBox="0 0 100 100" aria-hidden="true"><path d="M0 100V50A50 50 0 0 1 50 0V50A50 50 0 0 1 0 100ZM52 100V50A50 50 0 0 1 100 0V50A50 50 0 0 1 52 100Z" fill="var(--s)"></path></svg><button class="uc-add" data-i="9" aria-label="Add Telling time in Dutch to Alle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></button></div></div></figure><h3>Life in a new country</h3><p>Read the clock the Dutch way: half zeven is 6:30.</p></article></div>
 </section>
 
 <dialog id="modal" aria-labelledby="m-title">
@@ -1202,7 +1236,7 @@ picture{display:contents}
     </div>
       <div class="f-copy">
         <p>Create your own, bring your study material,<br class="br-d"> or choose one that's ready to learn.</p>
-        <div class="ctas"><a class="pill white js-signup" href="#">Start learning free <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="pill glass" href="#examples">Explore the library</a></div>
+        <div class="ctas"><a class="pill white js-signup" href="https://my.allecards.app/?auth=signup">Start learning free <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="pill glass" href="#examples">Explore the library</a></div>
       </div>
     </div>
   </div>
@@ -1218,11 +1252,11 @@ picture{display:contents}
 <footer>
   <div class="foot-wrap">
     <div class="foot">
-      <div class="foot-brand"><a class="logo" href="#top" data-logo aria-label="Alle home"></a><p>Flashcards for whatever you need to learn.</p></div>
+      <div class="foot-brand"><a class="logo" href="#top" data-logo aria-label="Alle home"><svg viewBox="0 0 22 26" aria-hidden="true"><path d="M2.2 3.6Q2.2 2.4 3.4 2.2L7.6 1.4Q9 1.2 9 2.6V23.4Q9 24.8 7.6 24.6L3.4 23.8Q2.2 23.6 2.2 22.4Z M12.6 3.6Q12.6 2.4 13.8 2.2L18 1.4Q19.4 1.2 19.4 2.6V23.4Q19.4 24.8 18 24.6L13.8 23.8Q12.6 23.6 12.6 22.4Z" fill="currentColor"></path></svg><span>Alle</span></a><p>Flashcards for whatever you need to learn.</p></div>
       <nav class="foot-cols" aria-label="Footer">
         <div><p class="f-h">Product</p><a href="#features">Features</a><a href="#features">How it works</a><a href="#faq">FAQ</a></div>
         <div><p class="f-h">Alle</p><a href="#contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/help">Help</a><a href="#" class="js-cookie-settings">Cookie settings</a></div>
-        <div><p class="f-h">Account</p><a class="js-login" href="#">Login</a><a class="js-signup" href="#">Get started</a></div>
+        <div><p class="f-h">Account</p><a class="js-login" href="https://my.allecards.app/?auth=login">Login</a><a class="js-signup" href="https://my.allecards.app/?auth=signup">Get started</a></div>
       </nav>
     </div>
     <div class="legal"><span>© 2026 Alle</span></div>
