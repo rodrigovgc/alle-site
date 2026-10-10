@@ -7,9 +7,9 @@
 <meta name="description" content="Alle is a free flashcard app for learning your own material. Turn a Google Sheet into flashcards, create flashcards with AI, or start with a ready-made deck.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png?v=2" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" sizes="180x180" href="/alle-home-icon-180.png">
 <link rel="canonical" href="https://allecards.app/">
 <script type="application/ld+json">
 {
@@ -1010,6 +1010,21 @@ picture{display:contents}
 .files .fn small{font-size:12.5px;color:var(--muted)}
 .files .rm{width:34px;height:34px;border-radius:50%;border:0;background:var(--beige);color:var(--ink);display:grid;place-items:center;cursor:pointer;flex:none}
 .files .rm svg{width:12px;height:12px}
+
+/* ===== guides ===== */
+.guides{padding-top:clamp(72px,8vw,120px)}
+.guides .lead a{color:var(--ink)}
+.guides-grid{margin-top:clamp(40px,5vw,64px);display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,24px)}
+.guide{display:flex;flex-direction:column;color:var(--ink);text-decoration:none}
+.guide__art{height:clamp(280px,26vw,320px);border-radius:28px;background:var(--beige);display:flex;align-items:center;justify-content:center;overflow:hidden;transition:transform .5s var(--ease)}
+.guide__art .sc{transform:scale(.92)}
+.guide__meta{margin-top:20px;font-size:14px;color:var(--label)}
+.guide h3{margin-top:6px;font-size:clamp(21px,1.7vw,24px);letter-spacing:-0.025em;line-height:1.2}
+.guide__text{margin-top:8px;color:var(--label);font-size:16px;line-height:1.5}
+.guide__more{margin-top:14px;display:inline-flex;align-items:center;gap:8px;font-weight:500;font-size:15px}
+.guide__more .arr{transition:transform .25s var(--ease)}
+@media (hover:hover){.guide:hover .guide__art{transform:translateY(-4px)}.guide:hover .guide__more .arr{transform:translateX(3px)}}
+@media (max-width:900px){.guides-grid{grid-template-columns:1fr;gap:40px}.guide__art{height:300px}}
 </style>
 <script>
   // Start at the top on refresh (unless a #section link was opened)
@@ -1239,6 +1254,36 @@ picture{display:contents}
   <div class="marquee"><div class="mq-track" id="mq1"></div></div>
   <div class="marquee rev"><div class="mq-track" id="mq2"></div></div>
 </section>
+
+<!-- ================= GUIDES ================= -->
+<section class="sec guides" id="guides" aria-labelledby="guides-h">
+  <div class="wrap">
+    <div class="rv head-row"><h2 id="guides-h">Guides to get<br class="br-d"> you started</h2><p class="lead">Short, step-by-step guides for your first decks. More in <a href="/help">Help and guides</a>.</p></div>
+    <div class="guides-grid">
+      <a class="guide rv d1" href="/help#start">
+        <div class="guide__art alle-scene alle-scene--light" data-alle-scene="welcome" aria-hidden="true"></div>
+        <p class="guide__meta">Guide · 2 min read</p>
+        <h3>Getting started</h3>
+        <p class="guide__text">Make your free account, pick a ready-made deck and try a short session to see how Alle works.</p>
+        <span class="guide__more">Read the guide <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="guide rv d2" href="/help#sheets">
+        <div class="guide__art alle-scene alle-scene--light" data-alle-scene="sheets" aria-hidden="true"></div>
+        <p class="guide__meta">Guide · 3 min read</p>
+        <h3>Turn a Google Sheet into flashcards</h3>
+        <p class="guide__text">Put your notes in two columns, publish the sheet and add it to Alle. Every row becomes a card.</p>
+        <span class="guide__more">Read the guide <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="guide rv d3" href="/help#ai">
+        <div class="guide__art alle-scene alle-scene--light" data-alle-scene="ai" aria-hidden="true"></div>
+        <p class="guide__meta">Guide · 2 min read</p>
+        <h3>Create flashcards with AI</h3>
+        <p class="guide__text">Tell Alle what you want to learn, use the prompt with your favourite AI, then paste the cards back.</p>
+        <span class="guide__more">Read the guide <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer>
@@ -1247,7 +1292,7 @@ picture{display:contents}
       <div class="foot-brand"><a class="logo" href="#top" data-logo aria-label="Alle home"><svg viewBox="0 0 22 26" aria-hidden="true"><path d="M2.2 3.6Q2.2 2.4 3.4 2.2L7.6 1.4Q9 1.2 9 2.6V23.4Q9 24.8 7.6 24.6L3.4 23.8Q2.2 23.6 2.2 22.4Z M12.6 3.6Q12.6 2.4 13.8 2.2L18 1.4Q19.4 1.2 19.4 2.6V23.4Q19.4 24.8 18 24.6L13.8 23.8Q12.6 23.6 12.6 22.4Z" fill="currentColor"></path></svg><span>Alle</span></a><p>Flashcards for whatever you need to learn.</p></div>
       <nav class="foot-cols" aria-label="Footer">
         <div><p class="f-h">Product</p><a href="#features">Features</a><a href="#features">How it works</a><a href="#faq">FAQ</a></div>
-        <div><p class="f-h">Alle</p><a href="#contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/help">Help</a><a href="#" class="js-cookie-settings">Cookie settings</a></div>
+        <div><p class="f-h">Alle</p><a href="#contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/help">Help and guides</a><a href="#" class="js-cookie-settings">Cookie settings</a></div>
         <div><p class="f-h">Account</p><a class="js-login" href="https://my.allecards.app/?auth=login">Login</a><a class="js-signup" href="https://my.allecards.app/?auth=signup">Get started</a></div>
       </nav>
     </div>
@@ -1621,5 +1666,6 @@ document.querySelectorAll(".rv").forEach(el=>io.observe(el));
   document.querySelectorAll('.js-cookie-settings').forEach(function(a){ a.addEventListener('click',function(e){ e.preventDefault(); show(); }); });
 })();
 </script>
+<script src="/scenes.js" defer></script>
 </body>
 </html>
