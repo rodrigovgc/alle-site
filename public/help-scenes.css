@@ -18,13 +18,13 @@
   --color-danger: #E5484D;
 
   /* ---- Deck palette (rotates) -------------------------------------------- */
-  --deck-lime:   #E6F7A3;  --deck-lime-deep:   #CBE86F;  /* pastel lime, matches the family */
-  --deck-purple: #CDC9FD;  --deck-purple-deep: #B5B1FC;
-  --deck-pink:   #FEBDDA;  --deck-pink-deep:   #F1ADCA;
-  --deck-blue:   #BDDDFE;  --deck-blue-deep:   #ADCFF1;
-  --deck-green:  #CBFEBD;  --deck-green-deep:  #AEECB6;
-  --deck-yellow: #FFF4AB;  --deck-yellow-deep: #EFDC8F;
-  --deck-red:    #FEBDBD;  --deck-red-deep:    #EFA1A1;
+  --deck-lime:   #E1F77D;  --deck-lime-deep:   #CDE458;  /* pastel lime, matches the family */
+  --deck-purple: #C8C5FF;  --deck-purple-deep: #B4ADFF;
+  --deck-pink:   #FFB7D6;  --deck-pink-deep:   #FA99C5;
+  --deck-blue:   #B4D8FF;  --deck-blue-deep:   #92C6FB;
+  --deck-green:  #BDFFA7;  --deck-green-deep:  #A4ED8B;
+  --deck-yellow: #FFEE9C;  --deck-yellow-deep: #F6D93F;
+  --deck-red:    #FFB9B8;  --deck-red-deep:    #FC9C9C;
   --deck-beige:  #F6F4EC;  --deck-beige-deep:  #E8E5DA;
 
   /* Monochrome mode swaps every deck to these */
@@ -359,7 +359,7 @@
   background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
 }
 .sc-appicon { opacity: 0; animation: scIcon 7s cubic-bezier(.34,1.56,.64,1) infinite; }
-.sc-appicon__img { background: var(--deck-lime); gap: 2px; display: flex; align-items: center; justify-content: center; }
+.sc-appicon__img { background: var(--lime-100, #DCFB42); gap: 2px; display: flex; align-items: center; justify-content: center; }
 .sc-appicon__img i { width: 4px; height: 13px; border-radius: 1.5px; background: #0C0C0C; }
 @keyframes scIcon { 0%, 58% { opacity: 0; transform: scale(0.3); } 66%, 92% { opacity: 1; transform: scale(1); } 100% { opacity: 0; } }
 
