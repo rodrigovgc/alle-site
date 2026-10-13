@@ -57,7 +57,7 @@ footer a{text-decoration:none;color:var(--label)}
 <body>
 <header class="nav"><div class="wrap"><a class="logo" href="/" aria-label="Alle home"><svg viewBox="0 0 22 26" aria-hidden="true"><path d="M2.2 3.6Q2.2 2.4 3.4 2.2L7.6 1.4Q9 1.2 9 2.6V23.4Q9 24.8 7.6 24.6L3.4 23.8Q2.2 23.6 2.2 22.4Z M12.6 3.6Q12.6 2.4 13.8 2.2L18 1.4Q19.4 1.2 19.4 2.6V23.4Q19.4 24.8 18 24.6L13.8 23.8Q12.6 23.6 12.6 22.4Z" fill="currentColor"/></svg><span>Alle</span></a><a class="back" href="/">Back to Alle</a></div></header>
 <main>
-<header class="hero"><div class="wrap"><h1>Privacy Policy</h1><p>How Alle handles your personal data, in plain language: what we collect, why, who helps us run the service, and the rights you have.</p><p class="meta">Last updated: 7 October 2026</p></div></header>
+<header class="hero"><div class="wrap"><h1>Privacy Policy</h1><p>How Alle handles your personal data, in plain language: what we collect, why, who helps us run the service, and the rights you have.</p><p class="meta">Last updated: 13 October 2026</p></div></header>
 <div class="wrap layout">
 <nav class="toc" aria-label="On this page"><b>On this page</b><a href="#who">Who we are</a><a href="#collect">What we collect</a><a href="#use">Why we use it</a><a href="#providers">Service providers</a><a href="#cookies">Cookies and storage</a><a href="#ai">AI and Google Sheets</a><a href="#keep">How long we keep it</a><a href="#rights">Your rights</a><a href="#children">Children</a><a href="#changes">Changes</a><a href="#contact">Contact</a></nav>
 <article>
@@ -98,6 +98,7 @@ footer a{text-decoration:none;color:var(--label)}
 <li><b>Supabase</b>: user accounts, the database for decks, progress and feedback, and storage for feedback attachments.</li>
 <li><b>Vercel</b>: hosting for the Alle website and app.</li>
 <li><b>Resend</b>: sending account emails, such as confirming your email address or resetting your password.</li>
+<li><b>Anthropic</b> (Claude): writing the cards when you create a deck with Alle’s AI.</li>
 <li><b>Google Analytics</b> (Google Ireland Ltd): website statistics, only if you accept analytics cookies.</li>
 <li><b>Hotjar</b> (Hotjar Ltd, Malta): heatmaps and visit recordings on the website, only if you accept analytics cookies.</li>
 </ul>
@@ -109,7 +110,9 @@ footer a{text-decoration:none;color:var(--label)}
 <p>When you sign in to the app, your browser stores a sign-in token so you stay logged in, and your display preferences, such as light or dark mode, are kept on your device. These are strictly necessary for the app to work as you set it up, so they don't require consent.</p>
 
 <h2 id="ai">AI and Google Sheets</h2>
-<p><b>AI prompts.</b> Alle can write a prompt for you to use with an AI service of your choice. Alle doesn't send anything to that service. You copy the prompt yourself, and anything you share with an AI service is covered by that service's own privacy policy. Please don't put sensitive personal information into prompts.</p>
+<p><b>Alle’s AI.</b> When you create a deck with Alle’s AI, the choices you make in the builder (such as the subject, topic, focus, level and the names of the two sides) are sent to Anthropic, which provides the Claude AI model, to write the cards. Your name, email address and other decks are not sent. Anthropic processes this on our behalf under its commercial terms and does not use it to train its models. We keep a count of the AI decks you make each month, so we can offer a number of them for free. The cards you add are stored with your decks like any other deck.</p>
+<p><b>Your own AI.</b> You can also have Alle write a prompt for you to use with an AI service of your choice. Alle doesn't send anything to that service. You copy the prompt yourself, and anything you share with an AI service is covered by that service's own privacy policy.</p>
+<p>Either way, please don't put sensitive personal information into the AI builder or prompts.</p>
 <p><b>Google Sheets.</b> When you import a sheet, Alle reads the published CSV link you provide. Anyone with a published link can view that sheet, so only publish content you're comfortable sharing. Google's own privacy policy applies to your use of Google Sheets.</p>
 
 <h2 id="keep">How long we keep it</h2>
